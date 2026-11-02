@@ -1,0 +1,105 @@
+diff --git a/dist/nuxt.js b/dist/nuxt.js
+index 342ec930df51470e3544ce3a35499ff8939612f0..4b7c828c34a3796b608a20ddb9498c9a596fad3d 100644
+--- a/dist/nuxt.js
++++ b/dist/nuxt.js
+@@ -93,7 +93,11 @@ const docsNuxtModule = defineNuxtModule({
+ 	async setup(options, nuxt) {
+ 		const resolver = createResolver(import.meta.url);
+ 		const runtime = resolver.resolve("./runtime");
+-		nuxt.options.build.transpile.push(resolver.resolve(".."));
++		const packageRoot = resolver.resolve("..");
++		nuxt.options.build.transpile.push(packageRoot);
++		const transform = nuxt.options.imports.transform ??= {};
++		transform.include ??= [];
++		transform.include.push(new RegExp(`^${packageRoot.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/`));
+ 		const contentDir = resolve(nuxt.options.rootDir, options.dir ?? "content");
+ 		const rawDir = join(nuxt.options.buildDir, "docs/raw");
+ 		const config = publicConfig(options, nuxt.options.app.baseURL);
+diff --git a/dist/runtime/mcp/get-page.js b/dist/runtime/mcp/get-page.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..bb731e79e483f55505e3fbf5f33b354c997d0ee6
+--- /dev/null
++++ b/dist/runtime/mcp/get-page.js
+@@ -0,0 +1,39 @@
++import { getAgentDocument } from "#agent-discovery";
++import { createError, useRuntimeConfig } from "#imports";
++import { useEvent } from "nitropack/runtime";
++import { defineMcpTool } from "@nuxtjs/mcp-toolkit/server";
++import { z } from "zod";
++import { docsAppPath } from "#docs/navigation";
++//#region runtime/mcp/get-page.ts
++var get_page_default = defineMcpTool({
++	name: "get-page",
++	description: `Reads one documentation page as Markdown, with its title, description, and URL.
++
++Use a path from list-pages or from a link, such as /docs/getting-started.`,
++	annotations: {
++		readOnlyHint: true,
++		destructiveHint: false,
++		idempotentHint: true,
++		openWorldHint: false
++	},
++	inputSchema: { path: z.string().describe("Page path from list-pages, such as /docs/getting-started") },
++	cache: "1h",
++	handler: async ({ path }) => {
++		const event = useEvent();
++		const { appBase } = useRuntimeConfig(event).public.docs;
++		const document = await getAgentDocument(event, docsAppPath(path, appBase));
++		if (!document || "redirect" in document) throw createError({
++			statusCode: 404,
++			statusMessage: `No page at ${path}`
++		});
++		return {
++			title: document.title,
++			path,
++			description: document.description,
++			content: document.markdown,
++			url: document.canonicalUrl
++		};
++	}
++});
++//#endregion
++export { get_page_default as default };
+diff --git a/dist/runtime/mcp/get-page.ts b/dist/runtime/mcp/get-page.ts
+deleted file mode 100644
+index 8483946de5c237596660047e560a672a6a2c6563..0000000000000000000000000000000000000000
+diff --git a/dist/runtime/mcp/list-pages.js b/dist/runtime/mcp/list-pages.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..0ba05f0d4f0e19c005356950a2bdb259bcc37082
+--- /dev/null
++++ b/dist/runtime/mcp/list-pages.js
+@@ -0,0 +1,31 @@
++import { listAgentPages } from "#agent-discovery";
++import { useRuntimeConfig } from "#imports";
++import { useEvent } from "nitropack/runtime";
++import { defineMcpTool } from "@nuxtjs/mcp-toolkit/server";
++//#region runtime/mcp/list-pages.ts
++var list_pages_default = defineMcpTool({
++	name: "list-pages",
++	description: `Lists every documentation page with its title, path, description, and URL.
++
++Use it to find pages about a topic when you do not know the exact path. Then read a page with get-page.`,
++	annotations: {
++		readOnlyHint: true,
++		destructiveHint: false,
++		idempotentHint: true,
++		openWorldHint: false
++	},
++	cache: "1h",
++	handler: async () => {
++		const event = useEvent();
++		const { appBase } = useRuntimeConfig(event).public.docs;
++		const prefix = appBase.replace(/\/+$/, "");
++		return (await listAgentPages(event)).map((page) => ({
++			title: page.title,
++			path: page.route.startsWith(`${prefix}/`) ? page.route.slice(prefix.length) || "/" : page.route,
++			description: page.description,
++			url: page.url
++		}));
++	}
++});
++//#endregion
++export { list_pages_default as default };
+diff --git a/dist/runtime/mcp/list-pages.ts b/dist/runtime/mcp/list-pages.ts
+deleted file mode 100644
+index bc60714d7f7e1f337ba3bf7fc09fc6af1039ccd3..0000000000000000000000000000000000000000

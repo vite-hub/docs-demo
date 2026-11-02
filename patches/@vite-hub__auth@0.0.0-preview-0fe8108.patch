@@ -1,0 +1,145 @@
+diff --git a/dist/console-B7eERmGv.d.ts b/dist/console-YAyuZDsy.d.ts
+similarity index 98%
+rename from dist/console-B7eERmGv.d.ts
+rename to dist/console-YAyuZDsy.d.ts
+index 2fc77d4e3b73b1d96acb25da15925e741fa551ef..31591c6a9fb33ef245eaa3d1ae3c0bdc4b8c0159 100644
+--- a/dist/console-B7eERmGv.d.ts
++++ b/dist/console-YAyuZDsy.d.ts
+@@ -8,6 +8,8 @@ interface ViteHubConsoleDefinitionCatalogView {
+   notice: string;
+ }
+ interface ViteHubConsoleRecordColumn {
++  /** Set it for a column with few values, such as a status. The Console then filters the table by its values. */
++  filter?: boolean;
+   /** Key in `ViteHubConsoleRecord.cells`. */
+   key: string;
+   label: string;
+diff --git a/dist/console.d.ts b/dist/console.d.ts
+index 67a8a4ab8b2c1f7a70bc3c85adc206cad9fb72c8..6469c26e2c345c32f59d30db0726f6dec20ef896 100644
+--- a/dist/console.d.ts
++++ b/dist/console.d.ts
+@@ -1,5 +1,5 @@
+ import { At as AuthConsoleOptions, Bt as AuthConsoleUserDetail, Ct as AuthConsoleField, Dt as AuthConsoleImpersonation, Et as AuthConsoleHostOptions, Ft as AuthConsolePolicy, Ht as authConsoleActionNames, It as AuthConsoleQuery, Lt as AuthConsoleRoles, Mt as AuthConsoleOrganizationDetail, Nt as AuthConsoleOverview, Ot as AuthConsoleList, Pt as AuthConsolePage, Rt as AuthConsoleSession, St as AuthConsoleEventUser, Tt as AuthConsoleFieldType, Ut as authConsoleEventGroups, Vt as AuthConsoleValue, _t as AuthConsoleCapability, bt as AuthConsoleEvent, gt as AuthConsoleAgent, ht as AuthConsoleActivityQuery, jt as AuthConsoleOrganization, kt as AuthConsoleMutation, mt as AuthConsoleActivity, pt as AuthConsoleAction, vt as AuthConsoleColumn, wt as AuthConsoleFieldPolicy, xt as AuthConsoleEventGroup, yt as AuthConsoleDescription, zt as AuthConsoleUser } from "./events-1huUkLcN.js";
+-import { t as ViteHubConsoleAuthSection } from "./console-B7eERmGv.js";
++import { t as ViteHubConsoleAuthSection } from "./console-YAyuZDsy.js";
+ //#region src/console.d.ts
+ /** The owner descriptor. The host supplies the navigation and renders the Auth views. */
+ export declare const authConsoleSection: ViteHubConsoleAuthSection;
+diff --git a/dist/runtime/console.d.ts b/dist/runtime/console.d.ts
+index 6fa5b82b884aab2fd9a97059ad437f0ab24b9886..550d45536f10bcc64c3de0e7fb6b16c08d54071a 100644
+--- a/dist/runtime/console.d.ts
++++ b/dist/runtime/console.d.ts
+@@ -1,4 +1,4 @@
+-import { n as ViteHubConsoleRuntimeRecordReader } from "../console-B7eERmGv.js";
++import { n as ViteHubConsoleRuntimeRecordReader } from "../console-YAyuZDsy.js";
+ import { aggregateAuthEvents, listAuthEvents } from "../server.js";
+ //#region src/runtime/console.d.ts
+ /** Owner runtime reader. The Console must authorize access before it calls this export. */
+diff --git a/dist/runtime/console.js b/dist/runtime/console.js
+index e09cccdb60d3bfc54467e76a90bd3a0aa7bc99db..b48b457d6f0874516b5e7b619c199fec43c66044 100644
+--- a/dist/runtime/console.js
++++ b/dist/runtime/console.js
+@@ -1,4 +1,4 @@
+-import { f as getAuthEvents, t as aggregateAuthEvents, v as listAuthEvents } from "../server-CyGtwgv3.js";
++import { f as getAuthEvents, t as aggregateAuthEvents, v as listAuthEvents } from "../server-w3xFIQet.js";
+ //#region src/runtime/console.ts
+ /** Owner runtime reader. The Console must authorize access before it calls this export. */
+ const readAuthEventConsoleRecords = async () => {
+diff --git a/dist/server-CyGtwgv3.js b/dist/server-w3xFIQet.js
+similarity index 96%
+rename from dist/server-CyGtwgv3.js
+rename to dist/server-w3xFIQet.js
+index b82e84d42cc53ef2f4f71eeabeb3f6dee6b598ff..50c4724cdbf0473262d158dfad5d23ba200a9eed 100644
+--- a/dist/server-CyGtwgv3.js
++++ b/dist/server-w3xFIQet.js
+@@ -682,13 +682,31 @@ function resolveAuthOptions(definition, input = {}) {
+ 	};
+ }
+ //#endregion
++//#region ../internal/src/runtime/page-tools-shared.ts
++/**
++* The cookie that remembers the session route's answer for this browser: `1` when a tool allows the person, `0` when
++* none does or the person turned the tools off. It is a hint, never a credential, and it is not HttpOnly, because the
++* page's bootstrap script reads it.
++*/
++const viteHubPageToolsCookie = "vitehub-tools";
++/**
++* The cookie that tells page scripts that an app Auth session exists. `@vite-hub/auth` sets it to `1` next to the
++* session cookie and clears it on sign-out. It is not HttpOnly and holds no secret.
++*/
++const viteHubSessionMarkerCookie = "vitehub_session";
++/**
++* The `Set-Cookie` value that forgets the session route's answer. Auth sends it when a session starts or ends, so the
++* next page asks the session route again for the new person.
++*/
++const viteHubPageToolsResetCookie = `${viteHubPageToolsCookie}=; Path=/; Max-Age=0; SameSite=Lax`;
++//#endregion
+ //#region src/session-marker.ts
+ /**
+ * Name of the cookie that tells browser code a session exists. It holds `1`, never a secret, and it is not HttpOnly,
+ * so a page script can skip a session request for a visitor who never signed in. It does not prove a session:
+ * the server still decides.
+ */
+-const authSessionMarkerCookie = "vitehub_session";
++const authSessionMarkerCookie = viteHubSessionMarkerCookie;
+ const markerAttributes = [
+ 	"domain",
+ 	"expires",
+@@ -703,6 +721,14 @@ function requestSource(input) {
+ 	const headers = new Headers(input?.headers);
+ 	return headers.has("host") || headers.has("x-forwarded-host") ? headers : void 0;
+ }
++/** The value of one cookie in the request of an API call or a handler request. */
++function requestCookie(input, name) {
++	const headers = isRequestLike(input) ? input.headers : input?.headers ? new Headers(input.headers) : input?.request?.headers;
++	for (const part of headers?.get("cookie")?.split(";") ?? []) {
++		const separator = part.indexOf("=");
++		if (separator !== -1 && part.slice(0, separator).trim() === name) return part.slice(separator + 1).trim();
++	}
++}
+ function readSetCookie(cookie) {
+ 	const [pair = "", ...rest] = cookie.split(";").map((part) => part.trim());
+ 	const separator = pair.indexOf("=");
+@@ -718,12 +744,16 @@ function readSetCookie(cookie) {
+ 	return {
+ 		attributes,
+ 		cleared: !value || expired,
+-		name
++		name,
++		value
+ 	};
+ }
+ /**
+ * Sets `vitehub_session` next to the session cookie with the same lifetime, path, domain, and SameSite, and clears it
+-* when Better Auth clears the session cookie, such as on sign-out.
++* when Better Auth clears the session cookie, such as on sign-out. When a session starts or ends, it also clears the
++* `vitehub-tools` hint of the page tools, so the next page asks the session route again for the new person: a person
++* that a page tool, such as the Console, allows gets the ViteHub tools pill right after sign-in. A session refresh
++* keeps the same session token and keeps the hint.
+ */
+ function withSessionMarker(auth) {
+ 	async function markHeaders(original, input) {
+@@ -746,10 +776,12 @@ function withSessionMarker(auth) {
+ 			...session.attributes,
+ 			...session.cleared ? ["Max-Age=0"] : []
+ 		].join("; ");
++		const changed = session.cleared || session.value !== requestCookie(input, sessionCookie);
+ 		const headers = new Headers(original);
+ 		headers.delete("set-cookie");
+-		for (const cookie of setCookies) if (!cookie.startsWith(`vitehub_session=`)) headers.append("set-cookie", cookie);
++		for (const cookie of setCookies) if (!cookie.startsWith(`${authSessionMarkerCookie}=`) && !(changed && cookie.startsWith(`vitehub-tools=`))) headers.append("set-cookie", cookie);
+ 		headers.append("set-cookie", marker);
++		if (changed) headers.append("set-cookie", viteHubPageToolsResetCookie);
+ 		return headers;
+ 	}
+ 	async function markResponse(response, input) {
+diff --git a/dist/server.js b/dist/server.js
+index f26d2585c9483815657e2be6b57af8d0d2b2d9d2..7a427b0e5bd8b976775e746423ba32657cacfe67 100644
+--- a/dist/server.js
++++ b/dist/server.js
+@@ -1,4 +1,4 @@
+ import { i as setAuthRuntimeEnvResolver, r as setAuthAccessIdentityResolver } from "./server-tGu2Bc7d.js";
+-import { C as withAnonymousAuthorization, S as toAuthRequest, T as withAuthorization, _ as handleAuthRequest, a as createAuthAccessHandler, b as requireAuthAccessRoutes, c as createAuthRequestRuntimeOptions, d as getAuthConsoleForRequest, f as getAuthEvents, g as handleAuth, h as getAuthorization, i as createAuth, l as createBetterAuthOptions, m as getAuthForRequest, n as assertAuthOrigin, o as createAuthForRequest, p as getAuthForDefinition, r as auth, s as createAuthHandler, t as aggregateAuthEvents, u as getAuth, v as listAuthEvents, w as withAuth, x as requireAuthorization, y as requireAuth } from "./server-CyGtwgv3.js";
++import { C as withAnonymousAuthorization, S as toAuthRequest, T as withAuthorization, _ as handleAuthRequest, a as createAuthAccessHandler, b as requireAuthAccessRoutes, c as createAuthRequestRuntimeOptions, d as getAuthConsoleForRequest, f as getAuthEvents, g as handleAuth, h as getAuthorization, i as createAuth, l as createBetterAuthOptions, m as getAuthForRequest, n as assertAuthOrigin, o as createAuthForRequest, p as getAuthForDefinition, r as auth, s as createAuthHandler, t as aggregateAuthEvents, u as getAuth, v as listAuthEvents, w as withAuth, x as requireAuthorization, y as requireAuth } from "./server-w3xFIQet.js";
+ import { n as resetAuth } from "./runtime-state-DsgPKNV4.js";
+ export { aggregateAuthEvents, assertAuthOrigin, auth, createAuth, createAuthAccessHandler, createAuthForRequest, createAuthHandler, createAuthRequestRuntimeOptions, createBetterAuthOptions, handleAuth as default, handleAuth, getAuth, getAuthConsoleForRequest, getAuthEvents, getAuthForDefinition, getAuthForRequest, getAuthorization, handleAuthRequest, listAuthEvents, requireAuth, requireAuthAccessRoutes, requireAuthorization, resetAuth, setAuthAccessIdentityResolver, setAuthRuntimeEnvResolver, toAuthRequest, withAnonymousAuthorization, withAuth, withAuthorization };
