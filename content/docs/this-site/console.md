@@ -10,15 +10,15 @@ The ViteHub Console is the admin of this site. It runs in the same Worker at [`/
 ::steps{level="3"}
 ### Sign in
 
-Open [`/_vitehub/sign-in`](/_vitehub/sign-in) and sign in with GitHub, or with your email and password. The first admin is set in `server/auth.ts`: the user with that email gets the `admin` role on the first sign-in.
+Open [`/_vitehub/sign-in`](/_vitehub/sign-in) and sign in with your email and password. GitHub sign-in shows on the same page when the site has a GitHub OAuth App. The first admin is set in `server/auth.ts`: the user with that email gets the `admin` role when the user is created.
 
 ### Open the pill
 
-Go back to any docs page. A small pill shows at the bottom of the page when you are signed in. It has one button for each tool: the Console, Content, and Comments.
+Go back to any docs page. A small pill shows at the bottom of the page when you are signed in. It has one button for each tool: **Console**, **Content**, and **Comments**.
 
 ### Open a tool
 
-Select **Console** or **Content** in the pill. The tool opens in a window over the page, so you can read the page and the tool at the same time. **Open in new tab** opens the same view, with the same URL state, in a browser tab.
+Select **Console** or **Content** in the pill. The tool opens in a window over the page, so you can read the page and the tool at the same time. The first button at the top right of the window opens the same view in a browser tab, with the same URL.
 ::
 
 ## Sections

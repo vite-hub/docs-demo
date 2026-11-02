@@ -1,42 +1,138 @@
+diff --git a/dist/access-CpLFMg2M.d.ts b/dist/access-DGFRFq21.d.ts
+similarity index 98%
+rename from dist/access-CpLFMg2M.d.ts
+rename to dist/access-DGFRFq21.d.ts
+index aba43b6ff4d244da9b3a2bf7773c4638319696b2..7c90854963cd5425af579dc5bceb5919cc116854 100644
+--- a/dist/access-CpLFMg2M.d.ts
++++ b/dist/access-DGFRFq21.d.ts
+@@ -1,7 +1,7 @@
+ import "./operations-Bgklf9hM.js";
+ import { i as ConsoleUser, t as ConsoleAuthorize } from "./auth-types-BV2qgB_D.js";
+ import "./diagnostics-lT85pbVx.js";
+-import { t as ConsoleRequestEvent } from "./request-DOvvVgpI.js";
++import { t as ConsoleRequestEvent } from "./request-BjuvHIPy.js";
+ import { a as ConsoleSectionId } from "./sections-kOFhY9V1.js";
+ import "@vite-hub/agent";
+ //#region src/console/runtime/server/bearer.d.ts
+diff --git a/dist/access-CzCj1hAY.js b/dist/access-K9p_blZk.js
+similarity index 99%
+rename from dist/access-CzCj1hAY.js
+rename to dist/access-K9p_blZk.js
+index 6729ea8ff0e17dea493cd97ac8eb8ee388657b1a..2fc5f44e300a0aa2f7b38cfeee11e22c2dabab47 100644
+--- a/dist/access-CzCj1hAY.js
++++ b/dist/access-K9p_blZk.js
+@@ -2,7 +2,7 @@ import { c as installOperationRegistryLoader, l as installOperationSectionResolv
+ import { a as markBearerRejection, c as verifyConsoleBearer, o as mcpChallenge, s as resolveConsoleOAuth } from "./bearer-B2l_B7Hz.js";
+ import { r as consoleMountBase } from "./console-route-D2j6xDbY.js";
+ import { o as isConsoleImpersonationRejection, r as consoleDiagnosticBody } from "./diagnostics-YTWM3K3t.js";
+-import { a as consoleRequestURL, n as consoleRequestError, o as isConsoleDevelopmentRuntime } from "./request-C4Dq-a_0.js";
++import { a as consoleRequestURL, n as consoleRequestError, o as isConsoleDevelopmentRuntime } from "./request-B8U5GgEf.js";
+ import { defineGrant } from "@vite-hub/runtime/internal/grant";
+ //#region src/console/runtime/server/runtime.ts
+ const runtimeKey = Symbol.for("vitehub.console.runtime");
 diff --git a/dist/agent/capabilities.d.ts b/dist/agent/capabilities.d.ts
-index 69e98c16ce3f8a8afd6f32092fd8fc28f6edc3cd..1e9a572f0dbf77f1d36b6c7171d659c2df428a8b 100644
+index 69e98c16ce3f8a8afd6f32092fd8fc28f6edc3cd..b3d9a141aaf7ff41558e636498a557b82db2a81c 100644
 --- a/dist/agent/capabilities.d.ts
 +++ b/dist/agent/capabilities.d.ts
 @@ -1,4 +1,4 @@
 -import { n as ConsoleRuntime } from "../server-BRsPaQCl.js";
-+import { n as ConsoleRuntime } from "../server-DLiP1EuQ.js";
++import { n as ConsoleRuntime } from "../server-DCnTWYk1.js";
  import { AgentCapabilityDefinition } from "@vite-hub/agent";
  import { InputCommand, InputCommandResult, InputCommandRunInput, InputCommandsOptions } from "@vite-hub/agent/capabilities";
  export * from "@vite-hub/agent/capabilities";
-diff --git a/dist/agent-invocations.post-CIx0VFGn.js b/dist/agent-invocations.post-DhQn27Pk.js
+diff --git a/dist/agent-invocations.post-CIx0VFGn.js b/dist/agent-invocations.post-0JU-PfBu.js
 similarity index 99%
 rename from dist/agent-invocations.post-CIx0VFGn.js
-rename to dist/agent-invocations.post-DhQn27Pk.js
-index 3a019c22e8d9025997cf482125d523db12f66304..c708c8758d30dc27df7aa628f77cf8675a7ee8d8 100644
+rename to dist/agent-invocations.post-0JU-PfBu.js
+index 3a019c22e8d9025997cf482125d523db12f66304..944f37e629b81c35a1ddef0a8e6267a89839f371 100644
 --- a/dist/agent-invocations.post-CIx0VFGn.js
-+++ b/dist/agent-invocations.post-DhQn27Pk.js
-@@ -3,7 +3,7 @@ import { a as decodeAgentRouteParam, o as encodeAgentRouteParam } from "./consol
- import { a as consoleRequestURL, c as setConsoleResponseStatus, r as consoleRequestJSON, t as assertConsoleRequest } from "./request-C4Dq-a_0.js";
++++ b/dist/agent-invocations.post-0JU-PfBu.js
+@@ -1,9 +1,9 @@
+ import { t as viteHubErrorDiagnostics } from "./error-diagnostics-BkdNFB_6.js";
+ import { a as decodeAgentRouteParam, o as encodeAgentRouteParam } from "./console-route-D2j6xDbY.js";
+-import { a as consoleRequestURL, c as setConsoleResponseStatus, r as consoleRequestJSON, t as assertConsoleRequest } from "./request-C4Dq-a_0.js";
++import { a as consoleRequestURL, c as setConsoleResponseStatus, r as consoleRequestJSON, t as assertConsoleRequest } from "./request-B8U5GgEf.js";
  import { t as getConsoleBlob } from "./blob-BCuCE2bZ.js";
- import { h as consoleRequest, r as consoleAccessActor, w as withConsoleAccess } from "./access-CzCj1hAY.js";
+-import { h as consoleRequest, r as consoleAccessActor, w as withConsoleAccess } from "./access-CzCj1hAY.js";
 -import { r as consoleAttachmentRequestBytes } from "./operations-DbqtgDX-.js";
-+import { r as consoleAttachmentRequestBytes } from "./operations-FgoHf9XM.js";
++import { h as consoleRequest, r as consoleAccessActor, w as withConsoleAccess } from "./access-K9p_blZk.js";
++import { r as consoleAttachmentRequestBytes } from "./operations-DWQxWnp0.js";
  import { n as getConsoleAgentCapabilities, r as getConsoleAgentDefinition, t as consoleAgentInvokerProfiles } from "./agents-B-aCL9zR.js";
  import { t as console } from "./server-BkwnKOWP.js";
  import { n as vitehubOwnedPrefix } from "./owned-paths-BnjT0FhU.js";
-diff --git a/dist/blob-DGFTF1Qb.d.ts b/dist/blob-TmgR0h-1.d.ts
+diff --git a/dist/auth-CtJg5k2b.js b/dist/auth-B_GTbuDo.js
+similarity index 99%
+rename from dist/auth-CtJg5k2b.js
+rename to dist/auth-B_GTbuDo.js
+index 2fbf162c2e4bf1e8d6ff77dc5bf36c99caa31f5b..818886c0e2a217fbbf298327d7b41310156e615b 100644
+--- a/dist/auth-CtJg5k2b.js
++++ b/dist/auth-B_GTbuDo.js
+@@ -1,6 +1,6 @@
+ import { r as consoleAuthPath } from "./auth-path-B7Ssonj-.js";
+ import { n as consoleMcpScopes } from "./bearer-B2l_B7Hz.js";
+-import { t as consoleAuthBasePath } from "./auth-pages-B6yiSa2e.js";
++import { t as consoleAuthBasePath } from "./auth-pages-CeVYSU8S.js";
+ import { createAuthForRequest } from "@vite-hub/auth/server";
+ import { oauthProvider } from "@better-auth/oauth-provider";
+ import { createAuthMiddleware } from "better-auth/api";
+diff --git a/dist/auth-pages-B6yiSa2e.js b/dist/auth-pages-CeVYSU8S.js
+similarity index 99%
+rename from dist/auth-pages-B6yiSa2e.js
+rename to dist/auth-pages-CeVYSU8S.js
+index 068d775fa61770ec7a0ab7d3d7afc62018b99c30..30c6a7dd0ccb69cba2782a069ffbd9712a8df665 100644
+--- a/dist/auth-pages-B6yiSa2e.js
++++ b/dist/auth-pages-CeVYSU8S.js
+@@ -3,7 +3,7 @@ import { i as consoleEventPath, r as consoleAuthPath } from "./auth-path-B7Ssonj
+ import { t as consoleDocumentMetadata } from "./document-metadata-nXusaMSq.js";
+ import { r as consoleMountBase } from "./console-route-D2j6xDbY.js";
+ import { o as isConsoleImpersonationRejection, r as consoleDiagnosticBody } from "./diagnostics-YTWM3K3t.js";
+-import { a as consoleRequestURL, u as isConsoleDevelopmentBuild } from "./request-C4Dq-a_0.js";
++import { a as consoleRequestURL, u as isConsoleDevelopmentBuild } from "./request-B8U5GgEf.js";
+ import * as v from "valibot";
+ //#region src/console/auth-oauth-page.ts
+ /**
+diff --git a/dist/blob-DGFTF1Qb.d.ts b/dist/blob-CAMoErU6.d.ts
 similarity index 84%
 rename from dist/blob-DGFTF1Qb.d.ts
-rename to dist/blob-TmgR0h-1.d.ts
-index b175220e0e1f29e8d9f99119157e2cd3f399461b..e055482b764115f0929848aef997eb2e6b906390 100644
+rename to dist/blob-CAMoErU6.d.ts
+index b175220e0e1f29e8d9f99119157e2cd3f399461b..805ba4e14cb87c4f6f1d9106990d7d95eabef1f6 100644
 --- a/dist/blob-DGFTF1Qb.d.ts
-+++ b/dist/blob-TmgR0h-1.d.ts
++++ b/dist/blob-CAMoErU6.d.ts
 @@ -1,4 +1,4 @@
 -import { n as ConsoleBlobInspection } from "./internal-DuEa3aye.js";
-+import { n as ConsoleBlobInspection } from "./internal-BR-FJ0_M.js";
++import { n as ConsoleBlobInspection } from "./internal-BZhvR8HO.js";
  import { BlobStorage } from "@vite-hub/blob";
  //#region src/console/runtime/server/blob.d.ts
  declare function installConsoleBlob(projectRoot: string, storage: BlobStorage, stores?: readonly string[]): ConsoleBlobInspection;
+diff --git a/dist/console/auth-inline.js b/dist/console/auth-inline.js
+index 3fe1b296861a4200b4db8287933dbdbc390e026d..3ae628efa9c5f2b2cb85c1f94673b4cdc6efe9d5 100644
+--- a/dist/console/auth-inline.js
++++ b/dist/console/auth-inline.js
+@@ -1,5 +1,5 @@
+ import { i as viteHubSecretSalt, r as readViteHubSecret } from "../secret-DrgWMRms.js";
+-import { n as defineConsoleAuth } from "../auth-CtJg5k2b.js";
++import { n as defineConsoleAuth } from "../auth-B_GTbuDo.js";
+ import { t as resolveInlineConsoleAuthGates } from "../auth-inline-config--vlclzm3.js";
+ import { chmodSync, mkdirSync } from "node:fs";
+ import { dirname } from "node:path";
+diff --git a/dist/console/auth-pages.js b/dist/console/auth-pages.js
+index f47da050e0c3fb13d59beb28ae237b18cf0550fb..f707fa68d0d0f82260c18669413db20c007575e4 100644
+--- a/dist/console/auth-pages.js
++++ b/dist/console/auth-pages.js
+@@ -1,2 +1,2 @@
+-import { a as createConsoleAppAuthAccess, i as consoleImpersonationPage, n as consoleAuthPageResponse, o as createConsoleAppAuthPages, r as consoleAuthSignInPage, s as readConsoleSessionUser, t as consoleAuthBasePath } from "../auth-pages-B6yiSa2e.js";
++import { a as createConsoleAppAuthAccess, i as consoleImpersonationPage, n as consoleAuthPageResponse, o as createConsoleAppAuthPages, r as consoleAuthSignInPage, s as readConsoleSessionUser, t as consoleAuthBasePath } from "../auth-pages-CeVYSU8S.js";
+ export { consoleAuthBasePath, consoleAuthPageResponse, consoleAuthSignInPage, consoleImpersonationPage, createConsoleAppAuthAccess, createConsoleAppAuthPages, readConsoleSessionUser };
+diff --git a/dist/console/auth.js b/dist/console/auth.js
+index 5986bacb9dea5dd95d5246d3e89f099b383c51c4..02dd65f4094719791bdc7b923c5d797733d2e4f0 100644
+--- a/dist/console/auth.js
++++ b/dist/console/auth.js
+@@ -1,3 +1,3 @@
+-import { a as consoleMcpNativeClients, i as prepareConsoleAuth, n as defineConsoleAuth, o as consoleMcpOAuth, r as defineConsoleAuthorize, t as createConsoleAuthDefinition } from "../auth-CtJg5k2b.js";
+-import { a as createConsoleAppAuthAccess, i as consoleImpersonationPage, n as consoleAuthPageResponse, o as createConsoleAppAuthPages, r as consoleAuthSignInPage, s as readConsoleSessionUser, t as consoleAuthBasePath } from "../auth-pages-B6yiSa2e.js";
++import { a as consoleMcpNativeClients, i as prepareConsoleAuth, n as defineConsoleAuth, o as consoleMcpOAuth, r as defineConsoleAuthorize, t as createConsoleAuthDefinition } from "../auth-B_GTbuDo.js";
++import { a as createConsoleAppAuthAccess, i as consoleImpersonationPage, n as consoleAuthPageResponse, o as createConsoleAppAuthPages, r as consoleAuthSignInPage, s as readConsoleSessionUser, t as consoleAuthBasePath } from "../auth-pages-CeVYSU8S.js";
+ export { consoleAuthBasePath, consoleAuthPageResponse, consoleAuthSignInPage, consoleImpersonationPage, consoleMcpNativeClients, consoleMcpOAuth, createConsoleAppAuthAccess, createConsoleAppAuthPages, createConsoleAuthDefinition, defineConsoleAuth, defineConsoleAuthorize, prepareConsoleAuth, readConsoleSessionUser };
 diff --git a/dist/console/runtime/client/blob-media.d.ts b/dist/console/runtime/client/blob-media.d.ts
 index dfd50de3f51725b577af6149d4f0985001e6c3da..62ccfbf245b9267afe4dc28599db453f471d086c 100644
 --- a/dist/console/runtime/client/blob-media.d.ts
@@ -101,12 +197,12 @@ index ce08aeb09a11e7498f074a402fdd770cc394d98a..c59ba3e62c5f8cec9784b4e0282186d0
  import { ContentImage } from "@vite-hub/content/editor";
  //#region src/console/runtime/client/editor.d.ts
 diff --git a/dist/console/runtime/client/env-status.d.ts b/dist/console/runtime/client/env-status.d.ts
-index 3acd4cc7c4a365d0408be54c116bab9f0c71339b..f4ff43c3f119acdf16fc4f6f8a445152c3c11970 100644
+index 3acd4cc7c4a365d0408be54c116bab9f0c71339b..fa8a08af48e906184e504681f0c96171d2f37c4b 100644
 --- a/dist/console/runtime/client/env-status.d.ts
 +++ b/dist/console/runtime/client/env-status.d.ts
 @@ -1,4 +1,4 @@
 -import { n as ConsoleEnvStatusEntry } from "../../../env-BBPbnLZu.js";
-+import { n as ConsoleEnvStatusEntry } from "../../../env-D261sWnB.js";
++import { n as ConsoleEnvStatusEntry } from "../../../env-7GqjF2aQ.js";
  import { ServerEnvDescriptionEntry } from "@vite-hub/env";
  //#region src/console/runtime/client/env-status.d.ts
  /** Description and inspection use the same registry traversal order, including undisclosed names. */
@@ -5480,48 +5576,127 @@ index 0000000000000000000000000000000000000000..2d724453be412e01fb9af50ca99816dd
 diff --git a/dist/console/runtime/public/console/page-tool-Cs9jKg77.js b/dist/console/runtime/public/console/page-tool-Cs9jKg77.js
 deleted file mode 100644
 index ed050bbdba967c10dfd39dd36e5dd5bb3df71310..0000000000000000000000000000000000000000
+diff --git a/dist/console/runtime/server/agents.get.d.ts b/dist/console/runtime/server/agents.get.d.ts
+index 2c241eb2e5b2560c88d57896e6035e4b292d77a1..27c25233cd18b0f5712fa4c1126e3477742569fc 100644
+--- a/dist/console/runtime/server/agents.get.d.ts
++++ b/dist/console/runtime/server/agents.get.d.ts
+@@ -1,6 +1,6 @@
+ import { t as consoleAgentInvokerProfiles } from "../../../agents-tizSlFQE.js";
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ //#region src/console/runtime/server/agents.get.d.ts
+ interface ConsoleAgentsResult {
+   /** Agents registered in this application. */
+diff --git a/dist/console/runtime/server/agents.get.js b/dist/console/runtime/server/agents.get.js
+index 4ae2c25ae76025cc843bbc1bab2d1d3ada9bb112..5120ca42f373858be31501edca9e6bcc44c695a1 100644
+--- a/dist/console/runtime/server/agents.get.js
++++ b/dist/console/runtime/server/agents.get.js
+@@ -1,5 +1,5 @@
+-import { t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { i as getConsoleInvocations } from "../../../invocations-Bd6LQ83H.js";
+ import { i as getConsoleAgents, r as getConsoleAgentDefinition, t as consoleAgentInvokerProfiles } from "../../../agents-B-aCL9zR.js";
+ //#region src/console/runtime/server/agents.get.ts
+diff --git a/dist/console/runtime/server/auth-manage.d.ts b/dist/console/runtime/server/auth-manage.d.ts
+index 37804fb869e986e80a61e339c00117a0fef8ee34..7e4f16b3327cf67672b0c61792cc92fa3f99c834 100644
+--- a/dist/console/runtime/server/auth-manage.d.ts
++++ b/dist/console/runtime/server/auth-manage.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-DGFRFq21.js";
+ //#region src/console/runtime/server/auth-manage.d.ts
+ declare function handler(event: ConsoleRequestEvent, access: ConsoleAccess): Promise<Response>;
+ declare const guarded: ConsoleAccessRoute<typeof handler>;
 diff --git a/dist/console/runtime/server/auth-manage.js b/dist/console/runtime/server/auth-manage.js
-index 966713fabc8eb16daebba0d250b6870a96f631db..76c6c30400b9be205d876110308be1c2ebc112e2 100644
+index 966713fabc8eb16daebba0d250b6870a96f631db..2d9d538e982f4f3046738f21e0d0481a66a59ca1 100644
 --- a/dist/console/runtime/server/auth-manage.js
 +++ b/dist/console/runtime/server/auth-manage.js
 @@ -1,6 +1,6 @@
- import { n as consoleRequestError, r as consoleRequestJSON, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
- import { a as consoleAccessWrites, h as consoleRequest, u as consoleImpersonation, w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
+-import { n as consoleRequestError, r as consoleRequestJSON, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { a as consoleAccessWrites, h as consoleRequest, u as consoleImpersonation, w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
 -import { i as getConsoleSections } from "../../../sections-DK32Kvve.js";
-+import { i as getConsoleSections } from "../../../sections-CdcqMkrI.js";
++import { n as consoleRequestError, r as consoleRequestJSON, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { a as consoleAccessWrites, h as consoleRequest, u as consoleImpersonation, w as withConsoleAccess } from "../../../access-K9p_blZk.js";
++import { i as getConsoleSections } from "../../../sections-YvESaauO.js";
  import * as v from "valibot";
  import { getAuthConsoleForRequest } from "@vite-hub/auth/server";
  //#region src/console/runtime/server/auth-manage.ts
 diff --git a/dist/console/runtime/server/blob.d.ts b/dist/console/runtime/server/blob.d.ts
-index 4fd49fa3b6941d2c4a85083fde9c1f4cab405147..534f4b4918bbb7dbec956a1074b34628dd7b729a 100644
+index 4fd49fa3b6941d2c4a85083fde9c1f4cab405147..1e08f8f3ceab25b71c16c1a500c614f079909147 100644
 --- a/dist/console/runtime/server/blob.d.ts
 +++ b/dist/console/runtime/server/blob.d.ts
 @@ -1,2 +1,2 @@
 -import { n as installConsoleBlob, t as getConsoleBlob } from "../../../blob-DGFTF1Qb.js";
-+import { n as installConsoleBlob, t as getConsoleBlob } from "../../../blob-TmgR0h-1.js";
++import { n as installConsoleBlob, t as getConsoleBlob } from "../../../blob-CAMoErU6.js";
  export { getConsoleBlob, installConsoleBlob };
 \ No newline at end of file
+diff --git a/dist/console/runtime/server/channel-replay.d.ts b/dist/console/runtime/server/channel-replay.d.ts
+index c17f4f32138e6343f16ddb1649b9c98090598810..545e588736d1d523b124ac3a6a0004d8443accd2 100644
+--- a/dist/console/runtime/server/channel-replay.d.ts
++++ b/dist/console/runtime/server/channel-replay.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-DGFRFq21.js";
+ //#region src/console/runtime/server/channel-replay.d.ts
+ /**
+  * Replays Channel history for `vitehub channels replay --url`.
+diff --git a/dist/console/runtime/server/channel-replay.js b/dist/console/runtime/server/channel-replay.js
+index 61fd44c52c8e970142c08fa93b9e2cd2a05d4eb5..16f562bbfe5603bbecf1a81cb72bd4587b62a5a2 100644
+--- a/dist/console/runtime/server/channel-replay.js
++++ b/dist/console/runtime/server/channel-replay.js
+@@ -1,5 +1,5 @@
+-import { a as consoleRequestURL, r as consoleRequestJSON, s as setConsoleResponseHeaders } from "../../../request-C4Dq-a_0.js";
+-import { h as consoleRequest, r as consoleAccessActor, w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, r as consoleRequestJSON, s as setConsoleResponseHeaders } from "../../../request-B8U5GgEf.js";
++import { h as consoleRequest, r as consoleAccessActor, w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { n as getConsoleAgentCapabilities, r as getConsoleAgentDefinition } from "../../../agents-B-aCL9zR.js";
+ import { t as console } from "../../../server-BkwnKOWP.js";
+ import { handleChannelReplayRequest } from "@vite-hub/agent/server/internal";
 diff --git a/dist/console/runtime/server/database.d.ts b/dist/console/runtime/server/database.d.ts
-index 42564b7ca1924ead3a23618cdbe0dcedfe3aa454..6c4c26a89e7763b1af55c0375f0cc2e9757b6c0b 100644
+index 42564b7ca1924ead3a23618cdbe0dcedfe3aa454..78b31f74d3d7109a25c0b195105b55af5b9095ee 100644
 --- a/dist/console/runtime/server/database.d.ts
 +++ b/dist/console/runtime/server/database.d.ts
 @@ -1,2 +1,2 @@
 -import { n as installConsoleDatabase, t as getConsoleDatabase } from "../../../database-uttSZHX1.js";
-+import { n as installConsoleDatabase, t as getConsoleDatabase } from "../../../database-hgptXXbE.js";
++import { n as installConsoleDatabase, t as getConsoleDatabase } from "../../../database-CI6Rbfy5.js";
  export { getConsoleDatabase, installConsoleDatabase };
 \ No newline at end of file
 diff --git a/dist/console/runtime/server/database.get.d.ts b/dist/console/runtime/server/database.get.d.ts
-index 4a73e36294cc1f2111cc67205da97d32a7cfd454..9c02f0edc1ffe0b7266f079edd9bdbb9f3460ae3 100644
+index 4a73e36294cc1f2111cc67205da97d32a7cfd454..61614ad85ef0e0d72d854f2315755391df6cb1d5 100644
 --- a/dist/console/runtime/server/database.get.d.ts
 +++ b/dist/console/runtime/server/database.get.d.ts
 @@ -1,6 +1,6 @@
- import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
- import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
 -import { r as ConsoleDatabaseInspection } from "../../../internal-DuEa3aye.js";
-+import { r as ConsoleDatabaseInspection } from "../../../internal-BR-FJ0_M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
++import { r as ConsoleDatabaseInspection } from "../../../internal-BZhvR8HO.js";
  import { SQLiteColumn, SQLiteTable } from "drizzle-orm/sqlite-core";
  //#region src/console/runtime/server/database.get.d.ts
  interface ConsoleDatabaseCell {
+diff --git a/dist/console/runtime/server/database.get.js b/dist/console/runtime/server/database.get.js
+index 8f626e53b0e3558d76b8ccbd61e38b95c80448a5..684282a1ae90e64d716bff329b5431867fe68c38 100644
+--- a/dist/console/runtime/server/database.get.js
++++ b/dist/console/runtime/server/database.get.js
+@@ -1,7 +1,7 @@
+ import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
+ import { t as getConsoleDatabase } from "../../../database-9-lv24TV.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { asc, count, desc, getTableColumns, is, or, sql } from "drizzle-orm";
+ import { SQLiteTable, getTableConfig } from "drizzle-orm/sqlite-core";
+ //#region src/console/runtime/server/database.get.ts
 diff --git a/dist/console/runtime/server/definitions.d.ts b/dist/console/runtime/server/definitions.d.ts
 index f7536ffe379c07cbbb68d3c7ab880a0109051740..a40ea02926211a078528a2cb3300175572065e64 100644
 --- a/dist/console/runtime/server/definitions.d.ts
@@ -5532,28 +5707,34 @@ index f7536ffe379c07cbbb68d3c7ab880a0109051740..a40ea02926211a078528a2cb33001755
  export { copyConsoleRecords, getConsoleContributedSections, getConsoleDefinitions, getConsoleSchedules, installConsoleDefinitions, installConsoleSchedules };
 \ No newline at end of file
 diff --git a/dist/console/runtime/server/definitions.get.d.ts b/dist/console/runtime/server/definitions.get.d.ts
-index 66cb1d41db18c9d888c2d6df03b16bb569539b67..8d0a7e1c3e7c7f597f4588557d189b2cd838c07b 100644
+index 66cb1d41db18c9d888c2d6df03b16bb569539b67..5392f04756274e0f0e276d110d369ae29d4bc9fb 100644
 --- a/dist/console/runtime/server/definitions.get.d.ts
 +++ b/dist/console/runtime/server/definitions.get.d.ts
-@@ -1,4 +1,4 @@
+@@ -1,6 +1,6 @@
 -import { _ as ConsoleSectionContent } from "../../../definitions-BvOYj8sv.js";
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-CpLFMg2M.js";
 +import { _ as ConsoleSectionContent } from "../../../definitions-CBFMaPXA.js";
- import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
- import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-DGFRFq21.js";
  import { a as ConsoleSectionId } from "../../../sections-kOFhY9V1.js";
+ //#region src/console/runtime/server/definitions.get.d.ts
+ declare function consoleDefinitionsHandler(event: ConsoleRequestEvent, access: ConsoleAccess): Promise<ConsoleSectionContent & {
 diff --git a/dist/console/runtime/server/definitions.get.js b/dist/console/runtime/server/definitions.get.js
-index 4fd6201436be361e39a87af2810a5f87ecd6b226..4fe270564fc8b1a39cd52ba66ee1326d382f67b0 100644
+index 4fd6201436be361e39a87af2810a5f87ecd6b226..45d59bd479d81bfd858c41fed7751edb761da985 100644
 --- a/dist/console/runtime/server/definitions.get.js
 +++ b/dist/console/runtime/server/definitions.get.js
 @@ -1,9 +1,9 @@
  import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
- import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
  import { x as isConsoleSectionId } from "../../../sections-CkdcIR0A.js";
 -import { i as getConsoleSchedules, r as getConsoleDefinitions, t as copyConsoleRecords } from "../../../definitions-B66s0KgV.js";
-+import { i as getConsoleSchedules, r as getConsoleDefinitions, t as copyConsoleRecords } from "../../../definitions-CJmCg59q.js";
- import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
 -import { o as readConsoleDocumentSection } from "../../../documents-DWE_IUQE.js";
-+import { o as readConsoleDocumentSection } from "../../../documents-ChBU46qO.js";
++import { i as getConsoleSchedules, r as getConsoleDefinitions, t as copyConsoleRecords } from "../../../definitions-CJmCg59q.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
++import { o as readConsoleDocumentSection } from "../../../documents-CDljhf6M.js";
  //#region src/console/runtime/server/definitions.get.ts
  function requestError(statusCode, statusMessage) {
  	return Object.assign(viteHubErrorDiagnostics.VITE_HUB_C0001({ message: statusMessage }), {
@@ -5566,95 +5747,272 @@ index b90ba1abb0af954c8c551f187b593ed1d85e057d..b9cd0a6afdc92d369d86620a743a8ca1
 +import { a as installConsoleDefinitions, i as getConsoleSchedules, n as getConsoleContributedSections, o as installConsoleSchedules, r as getConsoleDefinitions, t as copyConsoleRecords } from "../../../definitions-CJmCg59q.js";
  export { copyConsoleRecords, getConsoleContributedSections, getConsoleDefinitions, getConsoleSchedules, installConsoleDefinitions, installConsoleSchedules };
 diff --git a/dist/console/runtime/server/documents.d.ts b/dist/console/runtime/server/documents.d.ts
-index 1cbddef56278701526378da52d3d398ae4dc9bb6..24a8c4c8bfacc977268ed58317a090d251d3b283 100644
+index 1cbddef56278701526378da52d3d398ae4dc9bb6..207b61548e821757ff167fdb3f6f76293557aeef 100644
 --- a/dist/console/runtime/server/documents.d.ts
 +++ b/dist/console/runtime/server/documents.d.ts
 @@ -1,2 +1,2 @@
 -import { a as ConsoleDocumentEditors, c as consoleDocumentActionContext, d as loadConsoleDocumentActions, f as readConsoleDocumentSection, h as maximumConsoleDocumentRequestBytes, i as ConsoleDocumentEditorInstall, l as guardedHandler, m as consoleDocumentActionNames, n as ConsoleDocumentActionName, o as ConsoleMediaAccess, p as runConsoleDocumentAction, r as ConsoleDocumentActions, s as consoleActionError, t as ConsoleDocumentActionContext, u as installConsoleDocuments } from "../../../documents-BYEFlt-w.js";
-+import { a as ConsoleDocumentEditors, c as consoleDocumentActionContext, d as loadConsoleDocumentActions, f as readConsoleDocumentSection, h as maximumConsoleDocumentRequestBytes, i as ConsoleDocumentEditorInstall, l as guardedHandler, m as consoleDocumentActionNames, n as ConsoleDocumentActionName, o as ConsoleMediaAccess, p as runConsoleDocumentAction, r as ConsoleDocumentActions, s as consoleActionError, t as ConsoleDocumentActionContext, u as installConsoleDocuments } from "../../../documents-CwPnM24C.js";
++import { a as ConsoleDocumentEditors, c as consoleDocumentActionContext, d as loadConsoleDocumentActions, f as readConsoleDocumentSection, h as maximumConsoleDocumentRequestBytes, i as ConsoleDocumentEditorInstall, l as guardedHandler, m as consoleDocumentActionNames, n as ConsoleDocumentActionName, o as ConsoleMediaAccess, p as runConsoleDocumentAction, r as ConsoleDocumentActions, s as consoleActionError, t as ConsoleDocumentActionContext, u as installConsoleDocuments } from "../../../documents-C9s5p1Ef.js";
  export { ConsoleDocumentActionContext, ConsoleDocumentActionName, ConsoleDocumentActions, ConsoleDocumentEditorInstall, ConsoleDocumentEditors, ConsoleMediaAccess, consoleActionError, consoleDocumentActionContext, consoleDocumentActionNames, guardedHandler as default, installConsoleDocuments, loadConsoleDocumentActions, maximumConsoleDocumentRequestBytes, readConsoleDocumentSection, runConsoleDocumentAction };
 \ No newline at end of file
 diff --git a/dist/console/runtime/server/documents.js b/dist/console/runtime/server/documents.js
-index 066386c1d5c95a15c5451aa9c73fd39bd666aedd..ee921a747fe8a30ea34d814626ca60a91d16d5c1 100644
+index 066386c1d5c95a15c5451aa9c73fd39bd666aedd..c78cd3f689180c5bfb787d2027a26b036674ab64 100644
 --- a/dist/console/runtime/server/documents.js
 +++ b/dist/console/runtime/server/documents.js
 @@ -1,3 +1,3 @@
 -import { a as maximumConsoleDocumentRequestBytes, i as consoleDocumentActionNames } from "../../../operations-DbqtgDX-.js";
 -import { a as loadConsoleDocumentActions, i as installConsoleDocuments, n as consoleDocumentActionContext, o as readConsoleDocumentSection, r as guardedHandler, s as runConsoleDocumentAction, t as consoleActionError } from "../../../documents-DWE_IUQE.js";
-+import { a as maximumConsoleDocumentRequestBytes, i as consoleDocumentActionNames } from "../../../operations-FgoHf9XM.js";
-+import { a as loadConsoleDocumentActions, i as installConsoleDocuments, n as consoleDocumentActionContext, o as readConsoleDocumentSection, r as guardedHandler, s as runConsoleDocumentAction, t as consoleActionError } from "../../../documents-ChBU46qO.js";
++import { a as maximumConsoleDocumentRequestBytes, i as consoleDocumentActionNames } from "../../../operations-DWQxWnp0.js";
++import { a as loadConsoleDocumentActions, i as installConsoleDocuments, n as consoleDocumentActionContext, o as readConsoleDocumentSection, r as guardedHandler, s as runConsoleDocumentAction, t as consoleActionError } from "../../../documents-CDljhf6M.js";
  export { consoleActionError, consoleDocumentActionContext, consoleDocumentActionNames, guardedHandler as default, installConsoleDocuments, loadConsoleDocumentActions, maximumConsoleDocumentRequestBytes, readConsoleDocumentSection, runConsoleDocumentAction };
 diff --git a/dist/console/runtime/server/env-manage.js b/dist/console/runtime/server/env-manage.js
-index fd90476d229b34b2612292db674095a33c203018..c3043c6e602fb697400a5c2f2c9f37cdccb2cad8 100644
+index fd90476d229b34b2612292db674095a33c203018..1457b75adabcf31b37553a20c2fa4b85fa5a4a83 100644
 --- a/dist/console/runtime/server/env-manage.js
 +++ b/dist/console/runtime/server/env-manage.js
 @@ -1,6 +1,6 @@
  import { n as toEventRequest } from "../../../h3-v1-request-t4FhQXyv.js";
- import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
 -import { i as manageConsoleEnv } from "../../../env-taJLjzT0.js";
-+import { i as manageConsoleEnv } from "../../../env-D2h68Xy-.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
++import { i as manageConsoleEnv } from "../../../env-BDNYYIe5.js";
  //#region src/console/runtime/server/env-manage.ts
  const guardedHandler = withConsoleAccess((event) => manageConsoleEnv(toEventRequest(event)), {
  	section: "env",
 diff --git a/dist/console/runtime/server/env.d.ts b/dist/console/runtime/server/env.d.ts
-index 1dd2085e1130611508c539f155532d8aa8d703f3..d16cbdc491ebd5745af44a2953634d91c99b74b7 100644
+index 1dd2085e1130611508c539f155532d8aa8d703f3..4def35590fc6707fb7f046e91c6a0d25e627c6b2 100644
 --- a/dist/console/runtime/server/env.d.ts
 +++ b/dist/console/runtime/server/env.d.ts
 @@ -1,2 +1,2 @@
 -import { a as installConsoleEnv, i as getConsoleEnvStatus, n as ConsoleEnvStatusEntry, o as manageConsoleEnv, r as getConsoleEnv, t as ConsoleEnvResponse } from "../../../env-BBPbnLZu.js";
-+import { a as installConsoleEnv, i as getConsoleEnvStatus, n as ConsoleEnvStatusEntry, o as manageConsoleEnv, r as getConsoleEnv, t as ConsoleEnvResponse } from "../../../env-D261sWnB.js";
++import { a as installConsoleEnv, i as getConsoleEnvStatus, n as ConsoleEnvStatusEntry, o as manageConsoleEnv, r as getConsoleEnv, t as ConsoleEnvResponse } from "../../../env-7GqjF2aQ.js";
  export { ConsoleEnvResponse, ConsoleEnvStatusEntry, getConsoleEnv, getConsoleEnvStatus, installConsoleEnv, manageConsoleEnv };
 \ No newline at end of file
 diff --git a/dist/console/runtime/server/env.get.d.ts b/dist/console/runtime/server/env.get.d.ts
-index 0c400fa86add1263237ed44fbeb6aa31ed18d2fe..481ec0bacfe8a654048487541ac2d2fab4d48e0d 100644
+index 0c400fa86add1263237ed44fbeb6aa31ed18d2fe..c07996ce745e3cfbcda8d3e8c65069b30b9d38df 100644
 --- a/dist/console/runtime/server/env.get.d.ts
 +++ b/dist/console/runtime/server/env.get.d.ts
 @@ -1,6 +1,6 @@
- import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
- import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
 -import { t as ConsoleEnvResponse } from "../../../env-BBPbnLZu.js";
-+import { t as ConsoleEnvResponse } from "../../../env-D261sWnB.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
++import { t as ConsoleEnvResponse } from "../../../env-7GqjF2aQ.js";
  //#region src/console/runtime/server/env.get.d.ts
  /** Returns declaration metadata. `?status=1` adds status from `inspectServerEnv()`, which may call providers. */
  declare function consoleEnvHandler(event: ConsoleRequestEvent): Promise<ConsoleEnvResponse>;
 diff --git a/dist/console/runtime/server/env.get.js b/dist/console/runtime/server/env.get.js
-index b60804a26730a035c0d02549c8d112beadd7069b..2d660fad8c42d93279dc72be7a0c91b0b49165bb 100644
+index b60804a26730a035c0d02549c8d112beadd7069b..54d1e89d6273d0227ade800fedc71fd573bd2568 100644
 --- a/dist/console/runtime/server/env.get.js
 +++ b/dist/console/runtime/server/env.get.js
 @@ -1,8 +1,8 @@
  import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
- import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
- import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
 -import { i as getConsoleSections } from "../../../sections-DK32Kvve.js";
 -import { n as getConsoleEnvStatus, t as getConsoleEnv } from "../../../env-taJLjzT0.js";
-+import { i as getConsoleSections } from "../../../sections-CdcqMkrI.js";
-+import { n as getConsoleEnvStatus, t as getConsoleEnv } from "../../../env-D2h68Xy-.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
++import { i as getConsoleSections } from "../../../sections-YvESaauO.js";
++import { n as getConsoleEnvStatus, t as getConsoleEnv } from "../../../env-BDNYYIe5.js";
  //#region src/console/runtime/server/env.get.ts
  function consoleEnvError(statusCode, statusMessage) {
  	return Object.assign(viteHubErrorDiagnostics.VITE_HUB_C0001({ message: statusMessage }), {
 diff --git a/dist/console/runtime/server/env.js b/dist/console/runtime/server/env.js
-index a6f4b9ea2d1f2da671d2c2f2674580d646103174..ef6035aebf6cc0b5db3966fa72d96f924a1c5a96 100644
+index a6f4b9ea2d1f2da671d2c2f2674580d646103174..7cbe2604138479c7c99e81fef8b87e5d2ed3ce74 100644
 --- a/dist/console/runtime/server/env.js
 +++ b/dist/console/runtime/server/env.js
 @@ -1,2 +1,2 @@
 -import { i as manageConsoleEnv, n as getConsoleEnvStatus, r as installConsoleEnv, t as getConsoleEnv } from "../../../env-taJLjzT0.js";
-+import { i as manageConsoleEnv, n as getConsoleEnvStatus, r as installConsoleEnv, t as getConsoleEnv } from "../../../env-D2h68Xy-.js";
++import { i as manageConsoleEnv, n as getConsoleEnvStatus, r as installConsoleEnv, t as getConsoleEnv } from "../../../env-BDNYYIe5.js";
  export { getConsoleEnv, getConsoleEnvStatus, installConsoleEnv, manageConsoleEnv };
+diff --git a/dist/console/runtime/server/invocation-capabilities.get.d.ts b/dist/console/runtime/server/invocation-capabilities.get.d.ts
+index c5a7aed718303ecb9fbb93f35b02332705786b02..2a1131831429863d16510c76593b312820276b80 100644
+--- a/dist/console/runtime/server/invocation-capabilities.get.d.ts
++++ b/dist/console/runtime/server/invocation-capabilities.get.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ //#region src/console/runtime/server/invocation-capabilities.get.d.ts
+ declare function consoleInvocationCapabilitiesHandler(event: ConsoleRequestEvent): Promise<{
+   capabilities: readonly string[];
+diff --git a/dist/console/runtime/server/invocation-capabilities.get.js b/dist/console/runtime/server/invocation-capabilities.get.js
+index d3da3f111b9eaefd04e7fdc9b7d0c5b301e67d7c..8a755899b9508e6a03555a504f4ed0092ba602a6 100644
+--- a/dist/console/runtime/server/invocation-capabilities.get.js
++++ b/dist/console/runtime/server/invocation-capabilities.get.js
+@@ -1,6 +1,6 @@
+ import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { i as getConsoleInvocations } from "../../../invocations-Bd6LQ83H.js";
+ //#region src/console/runtime/server/invocation-capabilities.get.ts
+ async function consoleInvocationCapabilitiesHandler(event) {
+diff --git a/dist/console/runtime/server/invocation-workspace.get.d.ts b/dist/console/runtime/server/invocation-workspace.get.d.ts
+index d94ca918fcc19b28c6afc766eaf48e5747fdd1a6..1349b26482aab4e6f8f0e9a0cdb00758a2cb461b 100644
+--- a/dist/console/runtime/server/invocation-workspace.get.d.ts
++++ b/dist/console/runtime/server/invocation-workspace.get.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ //#region src/console/runtime/server/invocation-workspace.get.d.ts
+ type WorkspaceRevision = {
+   id: string;
+diff --git a/dist/console/runtime/server/invocation-workspace.get.js b/dist/console/runtime/server/invocation-workspace.get.js
+index f49d851cb3b9c4029fff25d2541c62166b5e27d4..5c33266682f4a51a574e656c2928892387c41bcc 100644
+--- a/dist/console/runtime/server/invocation-workspace.get.js
++++ b/dist/console/runtime/server/invocation-workspace.get.js
+@@ -1,6 +1,6 @@
+ import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { i as getConsoleInvocations } from "../../../invocations-Bd6LQ83H.js";
+ import { r as getConsoleAgentDefinition } from "../../../agents-B-aCL9zR.js";
+ import { agentHostWorkspaceRoute, getAgentHostWorkspaceInspector } from "@vite-hub/agent/server";
+diff --git a/dist/console/runtime/server/invocation.get.d.ts b/dist/console/runtime/server/invocation.get.d.ts
+index d389d0e31c4eefba79430413d7fda2a350d90881..32aa6af84bf9eab05063aa894d72cd26e69787d3 100644
+--- a/dist/console/runtime/server/invocation.get.d.ts
++++ b/dist/console/runtime/server/invocation.get.d.ts
+@@ -1,6 +1,6 @@
+ import { t as invocationUsage } from "../../../usage-CoQXs5nW.js";
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ import { AgentInvocationCancelResult, AgentInvocationDeleteOutcome, AgentInvocationRerunUnavailableReason, AgentInvocationSummary } from "@vite-hub/agent";
+ import { TraceEventLogEntry } from "@vite-hub/runtime";
+ //#region src/console/runtime/server/invocation.get.d.ts
+diff --git a/dist/console/runtime/server/invocation.get.js b/dist/console/runtime/server/invocation.get.js
+index a51472f92f88b42fdaf437430c79e125ce07db07..42d2a640053364391dfa3b3dac0b81ce08dc8b54 100644
+--- a/dist/console/runtime/server/invocation.get.js
++++ b/dist/console/runtime/server/invocation.get.js
+@@ -1,6 +1,6 @@
+ import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
+-import { a as consoleRequestURL, n as consoleRequestError, r as consoleRequestJSON, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, n as consoleRequestError, r as consoleRequestJSON, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { r as invocationUsage } from "../../../usage-index-62ecY866.js";
+ import { i as getConsoleInvocations } from "../../../invocations-Bd6LQ83H.js";
+ import { r as getConsoleAgentDefinition, t as consoleAgentInvokerProfiles } from "../../../agents-B-aCL9zR.js";
+diff --git a/dist/console/runtime/server/invocations.get.d.ts b/dist/console/runtime/server/invocations.get.d.ts
+index 0fe7b59f459cd08cf9e3ddb1f3d81401cf676eec..77a64e43b88a6f91e59909fa38b7fcb1d66a7557 100644
+--- a/dist/console/runtime/server/invocations.get.d.ts
++++ b/dist/console/runtime/server/invocations.get.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ import { AgentInvocationListResult } from "@vite-hub/agent";
+ //#region src/console/runtime/server/invocations.get.d.ts
+ declare const invocationsHandler: (event: ConsoleRequestEvent) => Promise<AgentInvocationListResult>;
+diff --git a/dist/console/runtime/server/invocations.get.js b/dist/console/runtime/server/invocations.get.js
+index 634f0423a1a7f62c3a23fc149b4f765f940c7897..17616740da0ebef8c9e60609558d043776a976d9 100644
+--- a/dist/console/runtime/server/invocations.get.js
++++ b/dist/console/runtime/server/invocations.get.js
+@@ -1,6 +1,6 @@
+ import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { r as invocationUsage } from "../../../usage-index-62ecY866.js";
+ import { i as getConsoleInvocations } from "../../../invocations-Bd6LQ83H.js";
+ //#region src/console/runtime/server/invocations.get.ts
+diff --git a/dist/console/runtime/server/logs.get.d.ts b/dist/console/runtime/server/logs.get.d.ts
+index 385b3a7c628fe56af7a120789cda36d2d7e86694..9ecc846b6d3721be710a39dd76562bbc44b50ed6 100644
+--- a/dist/console/runtime/server/logs.get.d.ts
++++ b/dist/console/runtime/server/logs.get.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ import { i as LogPage, s as LogSourceInfo } from "../../../source-ROp3XjOp.js";
+ //#region src/console/runtime/server/logs.get.d.ts
+ export declare function consoleLogsHandler(event: ConsoleRequestEvent): Promise<{
+diff --git a/dist/console/runtime/server/logs.get.js b/dist/console/runtime/server/logs.get.js
+index 8954f5de368bb8c115d947794998388f6c6d762b..ba4e616da7bdbe06f0d1f0153dc92548aa29d24d 100644
+--- a/dist/console/runtime/server/logs.get.js
++++ b/dist/console/runtime/server/logs.get.js
+@@ -1,5 +1,5 @@
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { i as logPageSchema, o as logSourceInfoSchema, s as parseLogQuery, t as LogCursorExpiredError } from "../../../source-BtvIoz-k.js";
+ import { t as getLogSource } from "../../../host-DpSFEo9c.js";
+ import * as v from "valibot";
+diff --git a/dist/console/runtime/server/mcp-authorization-server.js b/dist/console/runtime/server/mcp-authorization-server.js
+index aad572f942889137bb6847390fd2fc74f01ae98d..aa98cc7e974d4f0e2da6497898b360e5c8b4bf42 100644
+--- a/dist/console/runtime/server/mcp-authorization-server.js
++++ b/dist/console/runtime/server/mcp-authorization-server.js
+@@ -1,2 +1,2 @@
+-import { t as consoleMcpAuthorizationServerHandler } from "../../../mcp-authorization-server-D3b41Igu.js";
++import { t as consoleMcpAuthorizationServerHandler } from "../../../mcp-authorization-server-B173ejmZ.js";
+ export { consoleMcpAuthorizationServerHandler as default };
+diff --git a/dist/console/runtime/server/mcp-discovery.js b/dist/console/runtime/server/mcp-discovery.js
+index 72248388432efdd170f2ccd61dfc47b22093f1b9..a8e9980a0960ad3f0f653a3de25e11a1be35038f 100644
+--- a/dist/console/runtime/server/mcp-discovery.js
++++ b/dist/console/runtime/server/mcp-discovery.js
+@@ -1,6 +1,6 @@
+-import { h as consoleRequest } from "../../../access-CzCj1hAY.js";
+-import { t as consoleMcpMetadataHandler } from "../../../mcp-metadata-BaGLW26q.js";
+-import { t as consoleMcpAuthorizationServerHandler } from "../../../mcp-authorization-server-D3b41Igu.js";
++import { h as consoleRequest } from "../../../access-K9p_blZk.js";
++import { t as consoleMcpMetadataHandler } from "../../../mcp-metadata-DqaLNhz9.js";
++import { t as consoleMcpAuthorizationServerHandler } from "../../../mcp-authorization-server-B173ejmZ.js";
+ //#region src/console/runtime/server/mcp-discovery.ts
+ /** Public OAuth discovery must run before global app Auth, including when Nitro separates routed middleware. */
+ function createConsoleMcpDiscoveryHandler(delegatedPaths = []) {
+diff --git a/dist/console/runtime/server/mcp-metadata.js b/dist/console/runtime/server/mcp-metadata.js
+index 0bf8518f20a27a4f2b790075c726b36ea714d669..42f05f31ae6a9b88020789f88c78e2899fdc5841 100644
+--- a/dist/console/runtime/server/mcp-metadata.js
++++ b/dist/console/runtime/server/mcp-metadata.js
+@@ -1,2 +1,2 @@
+-import { t as consoleMcpMetadataHandler } from "../../../mcp-metadata-BaGLW26q.js";
++import { t as consoleMcpMetadataHandler } from "../../../mcp-metadata-DqaLNhz9.js";
+ export { consoleMcpMetadataHandler as default };
+diff --git a/dist/console/runtime/server/mcp.d.ts b/dist/console/runtime/server/mcp.d.ts
+index 698381234ecfb408937427e7770e0001d2efa6ab..14ab1e27db4314b16e3fb268e64a8b1740e5e2fd 100644
+--- a/dist/console/runtime/server/mcp.d.ts
++++ b/dist/console/runtime/server/mcp.d.ts
+@@ -1,4 +1,4 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
+ import { H3Event } from "h3";
+ //#region src/console/runtime/server/mcp.d.ts
+ /**
 diff --git a/dist/console/runtime/server/mcp.js b/dist/console/runtime/server/mcp.js
-index 5f5cf01a0935c2daac28bc299f4b3e1ccc2b4ebe..bfa27f69f2b3b0370a52dec66fa44c1e89f26673 100644
+index 5f5cf01a0935c2daac28bc299f4b3e1ccc2b4ebe..72a04596b884f802211ff70a76378b1eb8bf05b1 100644
 --- a/dist/console/runtime/server/mcp.js
 +++ b/dist/console/runtime/server/mcp.js
-@@ -3,8 +3,8 @@ import { n as toEventRequest } from "../../../h3-v1-request-t4FhQXyv.js";
+@@ -1,12 +1,12 @@
+ import { b as toOperationFailure, d as operationCall, f as operationInputJsonSchema, g as operationToolName, m as operationSection, u as operationAccessAllows, v as parseOperationInput } from "../../../operations-B8znjKbr.js";
+ import { n as toEventRequest } from "../../../h3-v1-request-t4FhQXyv.js";
  import { i as isBearerRejection, o as mcpChallenge, r as consoleMcpWriteScope, s as resolveConsoleOAuth, t as consoleMcpReadScope } from "../../../bearer-B2l_B7Hz.js";
- import { i as consoleRequestText, o as isConsoleDevelopmentRuntime, u as isConsoleDevelopmentBuild } from "../../../request-C4Dq-a_0.js";
- import { S as readConsoleOperationUser, a as consoleAccessWrites, h as consoleRequest, i as consoleAccessAllows, w as withConsoleAccess, x as readConsoleAccessUser, y as installedConsoleOAuth } from "../../../access-CzCj1hAY.js";
+-import { i as consoleRequestText, o as isConsoleDevelopmentRuntime, u as isConsoleDevelopmentBuild } from "../../../request-C4Dq-a_0.js";
+-import { S as readConsoleOperationUser, a as consoleAccessWrites, h as consoleRequest, i as consoleAccessAllows, w as withConsoleAccess, x as readConsoleAccessUser, y as installedConsoleOAuth } from "../../../access-CzCj1hAY.js";
 -import { i as getConsoleSections, l as consoleOperationRegistry } from "../../../sections-DK32Kvve.js";
 -import { i as forwardedRequestOrigin } from "../../../page-tools-CUck30WZ.js";
-+import { i as getConsoleSections, l as consoleOperationRegistry } from "../../../sections-CdcqMkrI.js";
++import { i as consoleRequestText, o as isConsoleDevelopmentRuntime, u as isConsoleDevelopmentBuild } from "../../../request-B8U5GgEf.js";
++import { S as readConsoleOperationUser, a as consoleAccessWrites, h as consoleRequest, i as consoleAccessAllows, w as withConsoleAccess, x as readConsoleAccessUser, y as installedConsoleOAuth } from "../../../access-K9p_blZk.js";
++import { i as getConsoleSections, l as consoleOperationRegistry } from "../../../sections-YvESaauO.js";
 +import { i as forwardedRequestOrigin } from "../../../page-tools-BLuzm5PS.js";
  import { n as resolveWaitUntil, t as getCloudflareEnv } from "../../../cloudflare-env-CIZCKabz.js";
- import { n as eventRemoteAddress, t as assertLoopbackWithoutSignIn } from "../../../loopback-C7-B2ban.js";
+-import { n as eventRemoteAddress, t as assertLoopbackWithoutSignIn } from "../../../loopback-C7-B2ban.js";
++import { n as eventRemoteAddress, t as assertLoopbackWithoutSignIn } from "../../../loopback-No5Kized.js";
  import { Validator } from "@cfworker/json-schema";
+ //#region ../internal/src/runtime/mcp-tools.ts
+ const registryKey = Symbol.for("vitehub.mcp.tools");
 diff --git a/dist/console/runtime/server/page-session.js b/dist/console/runtime/server/page-session.js
 index fd49d9bb758474610fdb08a5cc6da94cc9fd01be..eb08cf708824c542b3c21410575e113b262e56d8 100644
 --- a/dist/console/runtime/server/page-session.js
@@ -5665,10 +6023,32 @@ index fd49d9bb758474610fdb08a5cc6da94cc9fd01be..eb08cf708824c542b3c21410575e113b
  //#region src/console/runtime/server/page-session.ts
  var page_session_default = viteHubPageSessionHandler;
  //#endregion
+diff --git a/dist/console/runtime/server/page.get.d.ts b/dist/console/runtime/server/page.get.d.ts
+index 99f3e4e316023679f48bb9d35ddbd2a5629d36e3..bc90131b1e3a53d844d80216c40040ee7040ae65 100644
+--- a/dist/console/runtime/server/page.get.d.ts
++++ b/dist/console/runtime/server/page.get.d.ts
+@@ -1,4 +1,4 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
+ //#region src/console/runtime/server/page.get.d.ts
+ export default function consolePageHandler(event: ConsoleRequestEvent): Promise<Response>;
+ //#endregion
+\ No newline at end of file
 diff --git a/dist/console/runtime/server/page.get.js b/dist/console/runtime/server/page.get.js
-index b7edb8c61da1f47cdcbcf499f55c4515e752cc90..3ff3009ab5046be5bf25860086a1baa577a0df98 100644
+index b7edb8c61da1f47cdcbcf499f55c4515e752cc90..7d1c0e3f5e288da5644f8ea0d2a3cfb30d1d2356 100644
 --- a/dist/console/runtime/server/page.get.js
 +++ b/dist/console/runtime/server/page.get.js
+@@ -1,8 +1,8 @@
+ import { t as consoleDocumentMetadata } from "../../../document-metadata-nXusaMSq.js";
+ import { r as consoleMountBase } from "../../../console-route-D2j6xDbY.js";
+ import { a as isConsoleDiagnosticCode, i as consoleStatusDiagnosticCode, r as consoleDiagnosticBody } from "../../../diagnostics-YTWM3K3t.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest, u as isConsoleDevelopmentBuild } from "../../../request-C4Dq-a_0.js";
+-import { _ as consoleSignInRedirect, g as consoleSignInPage, o as consoleAllowsRequest, p as consolePageRejection, s as consoleAppAuthBasePath } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, t as assertConsoleRequest, u as isConsoleDevelopmentBuild } from "../../../request-B8U5GgEf.js";
++import { _ as consoleSignInRedirect, g as consoleSignInPage, o as consoleAllowsRequest, p as consolePageRejection, s as consoleAppAuthBasePath } from "../../../access-K9p_blZk.js";
+ //#region src/console/runtime/server/page.get.ts
+ const page = `<!doctype html>
+ <html lang="en">
 @@ -18,7 +18,7 @@ const page = `<!doctype html>
    <body>
      <div id="app"><p role="status" style="padding:2rem;font:14px/1.5 system-ui">Opening Console…</p><noscript>Enable JavaScript to use the Console.</noscript></div>
@@ -5678,88 +6058,210 @@ index b7edb8c61da1f47cdcbcf499f55c4515e752cc90..3ff3009ab5046be5bf25860086a1baa5
    </body>
  </html>`;
  const escapeAttribute = (value) => value.replaceAll("&", "&amp;").replaceAll("\"", "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+diff --git a/dist/console/runtime/server/rpc.d.ts b/dist/console/runtime/server/rpc.d.ts
+index 0b6adb30fd0bc0e874f9bd603f1e08bbc9a6061e..7699e26633bb15e86f8baca94c0da557338bd0be 100644
+--- a/dist/console/runtime/server/rpc.d.ts
++++ b/dist/console/runtime/server/rpc.d.ts
+@@ -1,4 +1,4 @@
+-import { t as ConsoleAccess } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleAccess } from "../../../access-DGFRFq21.js";
+ import { t as consoleOperationRegistry } from "../../../operation-contributions-CRTIo72s.js";
+ import { H3Event } from "h3";
+ //#region src/console/runtime/server/rpc.d.ts
 diff --git a/dist/console/runtime/server/rpc.js b/dist/console/runtime/server/rpc.js
-index 6f35e6d02cc9ae5bd9467c33984d388bfce56274..0849aa07ef84cda2834e9d8e2f0d90e8764c7a78 100644
+index 6f35e6d02cc9ae5bd9467c33984d388bfce56274..16796820739a005d43efdb2827ef1a1c44a17008 100644
 --- a/dist/console/runtime/server/rpc.js
 +++ b/dist/console/runtime/server/rpc.js
-@@ -4,10 +4,10 @@ import { i as consoleStatusDiagnosticCode, r as consoleDiagnosticBody } from "..
- import { n as consoleRequestError, r as consoleRequestJSON, u as isConsoleDevelopmentBuild } from "../../../request-C4Dq-a_0.js";
+@@ -1,13 +1,13 @@
+ import { d as operationCall, m as operationSection, n as assertOperationProject, p as operationRootHeader, t as assertOperationConfirmation, u as operationAccessAllows, v as parseOperationInput, y as projectRootHash } from "../../../operations-B8znjKbr.js";
+ import { n as toEventRequest } from "../../../h3-v1-request-t4FhQXyv.js";
+ import { i as consoleStatusDiagnosticCode, r as consoleDiagnosticBody } from "../../../diagnostics-YTWM3K3t.js";
+-import { n as consoleRequestError, r as consoleRequestJSON, u as isConsoleDevelopmentBuild } from "../../../request-C4Dq-a_0.js";
++import { n as consoleRequestError, r as consoleRequestJSON, u as isConsoleDevelopmentBuild } from "../../../request-B8U5GgEf.js";
  import { t as consoleRpcHeader } from "../../../rpc-DIUA61pv.js";
- import { S as readConsoleOperationUser, a as consoleAccessWrites, i as consoleAccessAllows, w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
+-import { S as readConsoleOperationUser, a as consoleAccessWrites, i as consoleAccessAllows, w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
 -import { d as installedConsoleProjectRoot, l as consoleOperationRegistry } from "../../../sections-DK32Kvve.js";
-+import { d as installedConsoleProjectRoot, l as consoleOperationRegistry } from "../../../sections-CdcqMkrI.js";
++import { S as readConsoleOperationUser, a as consoleAccessWrites, i as consoleAccessAllows, w as withConsoleAccess } from "../../../access-K9p_blZk.js";
++import { d as installedConsoleProjectRoot, l as consoleOperationRegistry } from "../../../sections-YvESaauO.js";
  import { n as resolveWaitUntil, t as getCloudflareEnv } from "../../../cloudflare-env-CIZCKabz.js";
- import { n as eventRemoteAddress, t as assertLoopbackWithoutSignIn } from "../../../loopback-C7-B2ban.js";
+-import { n as eventRemoteAddress, t as assertLoopbackWithoutSignIn } from "../../../loopback-C7-B2ban.js";
 -import { o as uploadConsoleMedia } from "../../../media-ZX_6SCUC.js";
-+import { o as uploadConsoleMedia } from "../../../media-DiTjqeCh.js";
++import { n as eventRemoteAddress, t as assertLoopbackWithoutSignIn } from "../../../loopback-No5Kized.js";
++import { o as uploadConsoleMedia } from "../../../media-BvEFIELL.js";
  import * as v from "valibot";
  //#region src/console/runtime/server/rpc.ts
  const consoleRpcCallPath = "/_vitehub/rpc/__call";
 diff --git a/dist/console/runtime/server/schedule-run.js b/dist/console/runtime/server/schedule-run.js
-index f20d3a7a7b1ca6268571df529efa76b7608f4b88..46a8808960a9b8446c499b6d0ba0c84d1ff66667 100644
+index f20d3a7a7b1ca6268571df529efa76b7608f4b88..3f1f7daddde8f88cd3b75d7a30dea348269ccb0b 100644
 --- a/dist/console/runtime/server/schedule-run.js
 +++ b/dist/console/runtime/server/schedule-run.js
 @@ -1,9 +1,9 @@
  import { n as toEventRequest } from "../../../h3-v1-request-t4FhQXyv.js";
  import { n as isViteHubSecretEqual, r as readViteHubSecret, t as deriveViteHubSecret } from "../../../secret-DrgWMRms.js";
- import { i as consoleRequestText } from "../../../request-C4Dq-a_0.js";
+-import { i as consoleRequestText } from "../../../request-C4Dq-a_0.js";
 -import { i as getConsoleSchedules } from "../../../definitions-B66s0KgV.js";
-+import { i as getConsoleSchedules } from "../../../definitions-CJmCg59q.js";
- import { E as loadConsoleRuntime } from "../../../access-CzCj1hAY.js";
+-import { E as loadConsoleRuntime } from "../../../access-CzCj1hAY.js";
 -import { i as getConsoleSections } from "../../../sections-DK32Kvve.js";
-+import { i as getConsoleSections } from "../../../sections-CdcqMkrI.js";
++import { i as consoleRequestText } from "../../../request-B8U5GgEf.js";
++import { i as getConsoleSchedules } from "../../../definitions-CJmCg59q.js";
++import { E as loadConsoleRuntime } from "../../../access-K9p_blZk.js";
++import { i as getConsoleSections } from "../../../sections-YvESaauO.js";
  import { t as getCloudflareEnv } from "../../../cloudflare-env-CIZCKabz.js";
  import { defineGrant } from "@vite-hub/runtime/internal/grant";
  //#region ../internal/src/dispatch.ts
+diff --git a/dist/console/runtime/server/search.get.d.ts b/dist/console/runtime/server/search.get.d.ts
+index a85a792603a988bc5617d78a5b5508fc8f0563c6..b9443b5594d3e144e06f24c527711b7a2bcb559f 100644
+--- a/dist/console/runtime/server/search.get.d.ts
++++ b/dist/console/runtime/server/search.get.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ import { CollectionHandler } from "@vite-hub/source/server";
+ //#region src/console/runtime/server/search.get.d.ts
+ export declare const consoleSearchCollectionHandler: CollectionHandler;
+diff --git a/dist/console/runtime/server/search.get.js b/dist/console/runtime/server/search.get.js
+index 15059f41d1d4e7c48a7a4f44ce51db79a25702ef..f4532c8fd9c322219c8c19f711f9ae4c174e3336 100644
+--- a/dist/console/runtime/server/search.get.js
++++ b/dist/console/runtime/server/search.get.js
+@@ -1,5 +1,5 @@
+-import { t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { i as getConsoleInvocations } from "../../../invocations-Bd6LQ83H.js";
+ import { defineCollection } from "@vite-hub/source";
+ import { defineCollectionHandler } from "@vite-hub/source/server";
 diff --git a/dist/console/runtime/server/sections.d.ts b/dist/console/runtime/server/sections.d.ts
-index 289ce2ad8f92f80fc427ad3439d4acd734617937..13c4d19ec2acdcbdb85a85895b8a32e862ac83c4 100644
+index 289ce2ad8f92f80fc427ad3439d4acd734617937..7bae0572d4623ae589a20c964c82e9744c541403 100644
 --- a/dist/console/runtime/server/sections.d.ts
 +++ b/dist/console/runtime/server/sections.d.ts
 @@ -1,5 +1,5 @@
- import { a as consoleConnectionsActor, c as resolveConsoleAppAuthIdentity, i as ConsoleRealtimeUser, o as consoleRealtimeAccess, r as ConsoleRealtimeAccess, s as installConsoleAccess } from "../../../access-CpLFMg2M.js";
+-import { a as consoleConnectionsActor, c as resolveConsoleAppAuthIdentity, i as ConsoleRealtimeUser, o as consoleRealtimeAccess, r as ConsoleRealtimeAccess, s as installConsoleAccess } from "../../../access-CpLFMg2M.js";
++import { a as consoleConnectionsActor, c as resolveConsoleAppAuthIdentity, i as ConsoleRealtimeUser, o as consoleRealtimeAccess, r as ConsoleRealtimeAccess, s as installConsoleAccess } from "../../../access-DGFRFq21.js";
  import { l as createConsoleAppAuthAccess, u as createConsoleAppAuthPages } from "../../../auth-pages-zZQJ0iN3.js";
 -import { a as installConsoleBuild, c as installConsoleDevelopment, i as getConsoleSections, l as installConsoleRuntime, n as getConsoleBuild, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections, t as getConsoleAuth, u as installConsolePageTool } from "../../../sections-D_X6XI3W.js";
-+import { a as installConsoleBuild, c as installConsoleDevelopment, i as getConsoleSections, l as installConsoleRuntime, n as getConsoleBuild, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections, t as getConsoleAuth, u as installConsolePageTool } from "../../../sections-DA5R5TpW.js";
++import { a as installConsoleBuild, c as installConsoleDevelopment, i as getConsoleSections, l as installConsoleRuntime, n as getConsoleBuild, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections, t as getConsoleAuth, u as installConsolePageTool } from "../../../sections--9qVEOz-.js";
  import { n as installConsoleOperations } from "../../../operation-contributions-CRTIo72s.js";
  export { type ConsoleRealtimeAccess, type ConsoleRealtimeUser, consoleConnectionsActor, consoleRealtimeAccess, createConsoleAppAuthAccess, createConsoleAppAuthPages, getConsoleAuth, getConsoleBuild, getConsoleProjectName, getConsoleSections, installConsoleAccess, installConsoleBuild, installConsoleDevelopment, installConsoleOperations, installConsolePageTool, installConsoleProjectName, installConsoleRuntime, installConsoleSections, resolveConsoleAppAuthIdentity };
 \ No newline at end of file
 diff --git a/dist/console/runtime/server/sections.get.d.ts b/dist/console/runtime/server/sections.get.d.ts
-index 9d4d0e5e28b16aa95e47d62659f8a1fa51eeab98..3cbe0aa750f9013433e67594947380078d22c306 100644
+index 9d4d0e5e28b16aa95e47d62659f8a1fa51eeab98..51da0c66efdc141c6a0acefce01062d39cea517b 100644
 --- a/dist/console/runtime/server/sections.get.d.ts
 +++ b/dist/console/runtime/server/sections.get.d.ts
-@@ -1,4 +1,4 @@
+@@ -1,6 +1,6 @@
 -import { t as ConsoleContributedSection } from "../../../definitions-BvOYj8sv.js";
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-CpLFMg2M.js";
 +import { t as ConsoleContributedSection } from "../../../definitions-CBFMaPXA.js";
- import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
- import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute, t as ConsoleAccess } from "../../../access-DGFRFq21.js";
  //#region src/console/runtime/server/sections.get.d.ts
+ /** The sections that this request may use. The client hides the others. Each route still checks its own section. */
+ declare function consoleSectionsHandler(event: ConsoleRequestEvent, access: ConsoleAccess): {
 diff --git a/dist/console/runtime/server/sections.get.js b/dist/console/runtime/server/sections.get.js
-index 2abf30f05028d4ad01381823a844ce07438170bf..5a6355cb6d3a648ffe6e6077de7e4d5344031c66 100644
+index 2abf30f05028d4ad01381823a844ce07438170bf..87ee9836e389e53de4209abbbbf0f51ee4b6b84d 100644
 --- a/dist/console/runtime/server/sections.get.js
 +++ b/dist/console/runtime/server/sections.get.js
 @@ -1,7 +1,7 @@
- import { t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
 -import { n as getConsoleContributedSections } from "../../../definitions-B66s0KgV.js";
-+import { n as getConsoleContributedSections } from "../../../definitions-CJmCg59q.js";
- import { a as consoleAccessWrites, t as allowedConsoleSections, w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
+-import { a as consoleAccessWrites, t as allowedConsoleSections, w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
 -import { i as getConsoleSections, l as consoleOperationRegistry, n as getConsoleBuild, r as getConsoleProjectName, t as getConsoleAuth } from "../../../sections-DK32Kvve.js";
-+import { i as getConsoleSections, l as consoleOperationRegistry, n as getConsoleBuild, r as getConsoleProjectName, t as getConsoleAuth } from "../../../sections-CdcqMkrI.js";
++import { t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { n as getConsoleContributedSections } from "../../../definitions-CJmCg59q.js";
++import { a as consoleAccessWrites, t as allowedConsoleSections, w as withConsoleAccess } from "../../../access-K9p_blZk.js";
++import { i as getConsoleSections, l as consoleOperationRegistry, n as getConsoleBuild, r as getConsoleProjectName, t as getConsoleAuth } from "../../../sections-YvESaauO.js";
  //#region src/console/runtime/server/sections.get.ts
  /** The sections that this request may use. The client hides the others. Each route still checks its own section. */
  function consoleSectionsHandler(event, access) {
 diff --git a/dist/console/runtime/server/sections.js b/dist/console/runtime/server/sections.js
-index 7b0836cddcbddec7983cffe7528c8bd3eca5004c..5fcc2f7670886fc2480903f81da65e978004a47d 100644
+index 7b0836cddcbddec7983cffe7528c8bd3eca5004c..06994526188625abf43883e3cf6c1f1c2b7759ad 100644
 --- a/dist/console/runtime/server/sections.js
 +++ b/dist/console/runtime/server/sections.js
 @@ -1,5 +1,5 @@
- import { a as createConsoleAppAuthAccess, o as createConsoleAppAuthPages } from "../../../auth-pages-B6yiSa2e.js";
- import { l as installConsoleDevelopment } from "../../../request-C4Dq-a_0.js";
- import { C as resolveConsoleAppAuthIdentity, T as installConsoleRuntime, l as consoleConnectionsActor, m as consoleRealtimeAccess, v as installConsoleAccess } from "../../../access-CzCj1hAY.js";
+-import { a as createConsoleAppAuthAccess, o as createConsoleAppAuthPages } from "../../../auth-pages-B6yiSa2e.js";
+-import { l as installConsoleDevelopment } from "../../../request-C4Dq-a_0.js";
+-import { C as resolveConsoleAppAuthIdentity, T as installConsoleRuntime, l as consoleConnectionsActor, m as consoleRealtimeAccess, v as installConsoleAccess } from "../../../access-CzCj1hAY.js";
 -import { a as installConsoleBuild, c as installConsolePageTool, i as getConsoleSections, n as getConsoleBuild, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections, t as getConsoleAuth, u as installConsoleOperations } from "../../../sections-DK32Kvve.js";
-+import { a as installConsoleBuild, c as installConsolePageTool, i as getConsoleSections, n as getConsoleBuild, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections, t as getConsoleAuth, u as installConsoleOperations } from "../../../sections-CdcqMkrI.js";
++import { a as createConsoleAppAuthAccess, o as createConsoleAppAuthPages } from "../../../auth-pages-CeVYSU8S.js";
++import { l as installConsoleDevelopment } from "../../../request-B8U5GgEf.js";
++import { C as resolveConsoleAppAuthIdentity, T as installConsoleRuntime, l as consoleConnectionsActor, m as consoleRealtimeAccess, v as installConsoleAccess } from "../../../access-K9p_blZk.js";
++import { a as installConsoleBuild, c as installConsolePageTool, i as getConsoleSections, n as getConsoleBuild, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections, t as getConsoleAuth, u as installConsoleOperations } from "../../../sections-YvESaauO.js";
  export { consoleConnectionsActor, consoleRealtimeAccess, createConsoleAppAuthAccess, createConsoleAppAuthPages, getConsoleAuth, getConsoleBuild, getConsoleProjectName, getConsoleSections, installConsoleAccess, installConsoleBuild, installConsoleDevelopment, installConsoleOperations, installConsolePageTool, installConsoleProjectName, installConsoleRuntime, installConsoleSections, resolveConsoleAppAuthIdentity };
+diff --git a/dist/console/runtime/server/sign-in.d.ts b/dist/console/runtime/server/sign-in.d.ts
+index 052fe160e96043e8fa76a8708b8d11959e9b4c61..f38b716066387711b4103c062b2dd0bc43f1b380 100644
+--- a/dist/console/runtime/server/sign-in.d.ts
++++ b/dist/console/runtime/server/sign-in.d.ts
+@@ -1,4 +1,4 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
+ //#region src/console/runtime/server/sign-in.d.ts
+ /** Run before app Auth so a signed-out page visit can reach the configured sign-in page. */
+ export default function consoleSignInMiddleware(event: ConsoleRequestEvent): Promise<Response | undefined> | undefined;
+diff --git a/dist/console/runtime/server/sign-in.js b/dist/console/runtime/server/sign-in.js
+index 55b0f38f70e0139cac08751d806fe8676fed2236..e6906b52686e1fc101217d81707971a1e859c747 100644
+--- a/dist/console/runtime/server/sign-in.js
++++ b/dist/console/runtime/server/sign-in.js
+@@ -1,4 +1,4 @@
+-import { _ as consoleSignInRedirect, c as consoleAppSignIn, h as consoleRequest } from "../../../access-CzCj1hAY.js";
++import { _ as consoleSignInRedirect, c as consoleAppSignIn, h as consoleRequest } from "../../../access-K9p_blZk.js";
+ //#region src/console/runtime/server/sign-in.ts
+ /** Run before app Auth so a signed-out page visit can reach the configured sign-in page. */
+ function consoleSignInMiddleware(event) {
+diff --git a/dist/console/runtime/server/status.get.d.ts b/dist/console/runtime/server/status.get.d.ts
+index 6e9ab72bca40a62af96ce3a3767c2e79675aaf47..3b8538b989037f22d2c5e99cc0b0c397b6a74879 100644
+--- a/dist/console/runtime/server/status.get.d.ts
++++ b/dist/console/runtime/server/status.get.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ import { AgentProviderStatus } from "@vite-hub/agent";
+ import { ObservabilityStatus } from "@vite-hub/agent/observability";
+ //#region src/console/runtime/server/status.get.d.ts
+diff --git a/dist/console/runtime/server/status.get.js b/dist/console/runtime/server/status.get.js
+index d16be84daf5dae048d8368091947114d73dd18d2..fa1c7edadc41576863ab5ef6d5f6e3daaf61390d 100644
+--- a/dist/console/runtime/server/status.get.js
++++ b/dist/console/runtime/server/status.get.js
+@@ -1,6 +1,6 @@
+ import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { i as getConsoleAgents, r as getConsoleAgentDefinition } from "../../../agents-B-aCL9zR.js";
+ import { createAgentStatusReader } from "@vite-hub/agent/server";
+ import { observabilityStatus } from "@vite-hub/agent/server/internal";
+diff --git a/dist/console/runtime/server/usage.get.d.ts b/dist/console/runtime/server/usage.get.d.ts
+index ff7d80cd87296f34b218c76366b46e5a175b1f73..1f2deca46523b6d4e65adbe3d214b87385d3f417 100644
+--- a/dist/console/runtime/server/usage.get.d.ts
++++ b/dist/console/runtime/server/usage.get.d.ts
+@@ -1,5 +1,5 @@
+-import { t as ConsoleRequestEvent } from "../../../request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute } from "../../../access-CpLFMg2M.js";
++import { t as ConsoleRequestEvent } from "../../../request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute } from "../../../access-DGFRFq21.js";
+ //#region src/console/runtime/server/usage.get.d.ts
+ declare const usageHandler: (event: ConsoleRequestEvent) => Promise<Record<string, unknown>>;
+ declare const guardedHandler: ConsoleAccessRoute<typeof usageHandler>;
+diff --git a/dist/console/runtime/server/usage.get.js b/dist/console/runtime/server/usage.get.js
+index 96c2db855e7a12f866959fb7d9a70ac548402e35..d4dfd0009ee93b3f2845d4c7f4ea9e557abda614 100644
+--- a/dist/console/runtime/server/usage.get.js
++++ b/dist/console/runtime/server/usage.get.js
+@@ -1,6 +1,6 @@
+ import { t as viteHubErrorDiagnostics } from "../../../error-diagnostics-BkdNFB_6.js";
+-import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "../../../access-CzCj1hAY.js";
++import { a as consoleRequestURL, t as assertConsoleRequest } from "../../../request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "../../../access-K9p_blZk.js";
+ import { a as parseConsoleUsageWindow, i as parseConsoleUsageStatus, n as createUsageSummary } from "../../../usage-index-62ecY866.js";
+ import { i as getConsoleInvocations, o as getConsoleUsageIndex } from "../../../invocations-Bd6LQ83H.js";
+ import { i as getConsoleAgents, r as getConsoleAgentDefinition } from "../../../agents-B-aCL9zR.js";
 diff --git a/dist/console/server.d.ts b/dist/console/server.d.ts
-index 3f30cf5d11383a4758dcbc0023ec4b7a0c930684..f745a9d584d2b92bdcce82b5a3cd2e8a44da7194 100644
+index 3f30cf5d11383a4758dcbc0023ec4b7a0c930684..87494270734877c7a81db906dfee11e2fe1fe9f0 100644
 --- a/dist/console/server.d.ts
 +++ b/dist/console/server.d.ts
 @@ -1,7 +1,7 @@
@@ -5769,15 +6271,15 @@ index 3f30cf5d11383a4758dcbc0023ec4b7a0c930684..f745a9d584d2b92bdcce82b5a3cd2e8a
 -import { a as installConsoleDefinitions, r as getConsoleDefinitions } from "../definitions-CPvzh7az.js";
 -import { n as installConsoleDatabase, t as getConsoleDatabase } from "../database-uttSZHX1.js";
 -import { n as ConsoleRuntime, r as console, t as ConsoleInvocationLink } from "../server-BRsPaQCl.js";
-+import { i as getConsoleSections, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections } from "../sections-DA5R5TpW.js";
-+import { n as installConsoleBlob, t as getConsoleBlob } from "../blob-TmgR0h-1.js";
++import { i as getConsoleSections, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections } from "../sections--9qVEOz-.js";
++import { n as installConsoleBlob, t as getConsoleBlob } from "../blob-CAMoErU6.js";
 +import { a as installConsoleDefinitions, r as getConsoleDefinitions } from "../definitions-BNgGxz3s.js";
-+import { n as installConsoleDatabase, t as getConsoleDatabase } from "../database-hgptXXbE.js";
-+import { n as ConsoleRuntime, r as console, t as ConsoleInvocationLink } from "../server-DLiP1EuQ.js";
++import { n as installConsoleDatabase, t as getConsoleDatabase } from "../database-CI6Rbfy5.js";
++import { n as ConsoleRuntime, r as console, t as ConsoleInvocationLink } from "../server-DCnTWYk1.js";
  export { ConsoleInvocationLink, ConsoleRuntime, console, createConsoleFixtureInvocations, createConsoleInvocations, getConsoleAgents, getConsoleBlob, getConsoleDatabase, getConsoleDefinitions, getConsoleInvocations, getConsoleInvocationsDatabase, getConsoleProjectName, getConsoleSections, installConsoleAgentDefinitions, installConsoleAgents, installConsoleBlob, installConsoleDatabase, installConsoleDefinitions, installConsoleFixtureInvocations, installConsoleInvocations, installConsoleProjectName, installConsoleSections };
 \ No newline at end of file
 diff --git a/dist/console/server.js b/dist/console/server.js
-index 714e4015e69879a3fa085a9493b5821b24a14200..3fd1b23722b7385ea163c34670868bb097eff670 100644
+index 714e4015e69879a3fa085a9493b5821b24a14200..69fe1c883a3241407d5bf3680849c7cb5c632e09 100644
 --- a/dist/console/server.js
 +++ b/dist/console/server.js
 @@ -1,7 +1,7 @@
@@ -5786,20 +6288,20 @@ index 714e4015e69879a3fa085a9493b5821b24a14200..3fd1b23722b7385ea163c34670868bb0
 -import { a as installConsoleDefinitions, r as getConsoleDefinitions } from "../definitions-B66s0KgV.js";
 -import { i as getConsoleSections, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections } from "../sections-DK32Kvve.js";
 +import { a as installConsoleDefinitions, r as getConsoleDefinitions } from "../definitions-CJmCg59q.js";
-+import { i as getConsoleSections, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections } from "../sections-CdcqMkrI.js";
++import { i as getConsoleSections, o as installConsoleProjectName, r as getConsoleProjectName, s as installConsoleSections } from "../sections-YvESaauO.js";
  import { a as getConsoleInvocationsDatabase, c as installConsoleInvocations, i as getConsoleInvocations, n as createConsoleFixtureInvocations, r as createConsoleInvocations, s as installConsoleFixtureInvocations } from "../invocations-Bd6LQ83H.js";
  import { a as installConsoleAgentDefinitions, i as getConsoleAgents, o as installConsoleAgents } from "../agents-B-aCL9zR.js";
  import { t as console } from "../server-BkwnKOWP.js";
-diff --git a/dist/database-uttSZHX1.d.ts b/dist/database-hgptXXbE.d.ts
+diff --git a/dist/database-uttSZHX1.d.ts b/dist/database-CI6Rbfy5.d.ts
 similarity index 86%
 rename from dist/database-uttSZHX1.d.ts
-rename to dist/database-hgptXXbE.d.ts
-index b72172862f02817415292e012f96fdf0468319f1..0fc772785482cd901368bcb3cd67475d36b950ad 100644
+rename to dist/database-CI6Rbfy5.d.ts
+index b72172862f02817415292e012f96fdf0468319f1..d158fb60530e9c2774dfddf6d26c51c8f6c194b9 100644
 --- a/dist/database-uttSZHX1.d.ts
-+++ b/dist/database-hgptXXbE.d.ts
++++ b/dist/database-CI6Rbfy5.d.ts
 @@ -1,4 +1,4 @@
 -import { r as ConsoleDatabaseInspection } from "./internal-DuEa3aye.js";
-+import { r as ConsoleDatabaseInspection } from "./internal-BR-FJ0_M.js";
++import { r as ConsoleDatabaseInspection } from "./internal-BZhvR8HO.js";
  import { RuntimeDatabaseEntry } from "@vite-hub/database/drizzle";
  //#region src/console/runtime/server/database.d.ts
  declare function installConsoleDatabase(projectRoot: string, databases: Record<string, RuntimeDatabaseEntry<Record<string, unknown>>>, names: readonly string[]): ConsoleDatabaseInspection;
@@ -5872,39 +6374,45 @@ index c9691651090702d69f89954f469aa8df5f79f60a..2533f2f487386a2ddeb3a59d66e0fe7c
  		}),
  		kind: "record-table",
  		notice: view.notice
-diff --git a/dist/documents-DWE_IUQE.js b/dist/documents-ChBU46qO.js
-similarity index 96%
+diff --git a/dist/documents-BYEFlt-w.d.ts b/dist/documents-C9s5p1Ef.d.ts
+similarity index 97%
+rename from dist/documents-BYEFlt-w.d.ts
+rename to dist/documents-C9s5p1Ef.d.ts
+index 63e841115fde8c5aaf0d76d6a76b06acd28ee685..82d45faccba5db678df80b6e5ebe03da8d31e534 100644
+--- a/dist/documents-BYEFlt-w.d.ts
++++ b/dist/documents-C9s5p1Ef.d.ts
+@@ -1,6 +1,6 @@
+-import { a as ConsoleDocumentCollection, c as ConsoleDocumentSetup } from "./definitions-BvOYj8sv.js";
+-import { t as ConsoleRequestEvent } from "./request-DOvvVgpI.js";
+-import { n as ConsoleAccessRoute, t as ConsoleAccess } from "./access-CpLFMg2M.js";
++import { a as ConsoleDocumentCollection, c as ConsoleDocumentSetup } from "./definitions-CBFMaPXA.js";
++import { t as ConsoleRequestEvent } from "./request-BjuvHIPy.js";
++import { n as ConsoleAccessRoute, t as ConsoleAccess } from "./access-DGFRFq21.js";
+ //#region src/console/runtime/server/limits.d.ts
+ /** Bodies carry a whole Markdown document, so they may exceed the ordinary Console request limit. */
+ declare const maximumConsoleDocumentRequestBytes: number;
+diff --git a/dist/documents-DWE_IUQE.js b/dist/documents-CDljhf6M.js
+similarity index 95%
 rename from dist/documents-DWE_IUQE.js
-rename to dist/documents-ChBU46qO.js
-index fbedcfe1664cabd8037a30ff74586692a1259b5c..f8413105fc90b9b19dc385df3400708ac7385195 100644
+rename to dist/documents-CDljhf6M.js
+index fbedcfe1664cabd8037a30ff74586692a1259b5c..3ebced9bf0dbdc23faedf9f18149e2981aae10e8 100644
 --- a/dist/documents-DWE_IUQE.js
-+++ b/dist/documents-ChBU46qO.js
++++ b/dist/documents-CDljhf6M.js
 @@ -1,9 +1,9 @@
  import { b as resolveConsoleDocuments, c as installConsoleDocumentsScope } from "./internal-Ca7DYHpa.js";
- import { a as consoleRequestURL, n as consoleRequestError, r as consoleRequestJSON, t as assertConsoleRequest } from "./request-C4Dq-a_0.js";
+-import { a as consoleRequestURL, n as consoleRequestError, r as consoleRequestJSON, t as assertConsoleRequest } from "./request-C4Dq-a_0.js";
 -import { a as parseConsoleDocumentSetup } from "./definitions-Cj91uq5k.js";
-+import { a as parseConsoleDocumentSetup } from "./definitions-DCBvCYMj.js";
- import { w as withConsoleAccess, x as readConsoleAccessUser } from "./access-CzCj1hAY.js";
+-import { w as withConsoleAccess, x as readConsoleAccessUser } from "./access-CzCj1hAY.js";
 -import { a as maximumConsoleDocumentRequestBytes, i as consoleDocumentActionNames } from "./operations-DbqtgDX-.js";
 -import { i as getConsoleSections } from "./sections-DK32Kvve.js";
-+import { a as maximumConsoleDocumentRequestBytes, i as consoleDocumentActionNames } from "./operations-FgoHf9XM.js";
-+import { i as getConsoleSections } from "./sections-CdcqMkrI.js";
++import { a as consoleRequestURL, n as consoleRequestError, r as consoleRequestJSON, t as assertConsoleRequest } from "./request-B8U5GgEf.js";
++import { a as parseConsoleDocumentSetup } from "./definitions-DCBvCYMj.js";
++import { w as withConsoleAccess, x as readConsoleAccessUser } from "./access-K9p_blZk.js";
++import { a as maximumConsoleDocumentRequestBytes, i as consoleDocumentActionNames } from "./operations-DWQxWnp0.js";
++import { i as getConsoleSections } from "./sections-YvESaauO.js";
  //#region src/console/runtime/server/documents.ts
  const actionFailureKey = Symbol.for("vitehub.console.action-failure");
  const sectionModulesKey = Symbol.for("vitehub.console.section-modules");
-diff --git a/dist/documents-BYEFlt-w.d.ts b/dist/documents-CwPnM24C.d.ts
-similarity index 99%
-rename from dist/documents-BYEFlt-w.d.ts
-rename to dist/documents-CwPnM24C.d.ts
-index 63e841115fde8c5aaf0d76d6a76b06acd28ee685..e9237b28bdbd299f85a745cd87011f4e9a3a07e3 100644
---- a/dist/documents-BYEFlt-w.d.ts
-+++ b/dist/documents-CwPnM24C.d.ts
-@@ -1,4 +1,4 @@
--import { a as ConsoleDocumentCollection, c as ConsoleDocumentSetup } from "./definitions-BvOYj8sv.js";
-+import { a as ConsoleDocumentCollection, c as ConsoleDocumentSetup } from "./definitions-CBFMaPXA.js";
- import { t as ConsoleRequestEvent } from "./request-DOvvVgpI.js";
- import { n as ConsoleAccessRoute, t as ConsoleAccess } from "./access-CpLFMg2M.js";
- //#region src/console/runtime/server/limits.d.ts
 diff --git a/dist/documents-lX4r_qyb.d.ts b/dist/documents-Dn5i_AZb.d.ts
 similarity index 99%
 rename from dist/documents-lX4r_qyb.d.ts
@@ -5959,32 +6467,33 @@ index 6aa1409983fb6e1d0d30a5c22165bbcd2c75a2f7..9a7c34d230d3a63524520caa946e2569
  		sort: sort && options.sorts.includes(sort) ? sort : options.sorts[0] ?? "id:asc",
  		state: state === "scheduled" ? state : consoleDocumentStates.find((entry) => entry === state) ?? "all"
  	};
-diff --git a/dist/env-BBPbnLZu.d.ts b/dist/env-D261sWnB.d.ts
-similarity index 95%
+diff --git a/dist/env-BBPbnLZu.d.ts b/dist/env-7GqjF2aQ.d.ts
+similarity index 90%
 rename from dist/env-BBPbnLZu.d.ts
-rename to dist/env-D261sWnB.d.ts
-index 77bbc1afe1e3f3545469961462240bf20899539f..f78b156ff5303d97dbc88040b0f72a012d317a70 100644
+rename to dist/env-7GqjF2aQ.d.ts
+index 77bbc1afe1e3f3545469961462240bf20899539f..fdd7459c8f0004e3fff18dccd700d90572e5fe5a 100644
 --- a/dist/env-BBPbnLZu.d.ts
-+++ b/dist/env-D261sWnB.d.ts
++++ b/dist/env-7GqjF2aQ.d.ts
 @@ -1,5 +1,5 @@
- import { t as ConsoleRequestEvent } from "./request-DOvvVgpI.js";
+-import { t as ConsoleRequestEvent } from "./request-DOvvVgpI.js";
 -import { i as ConsoleEnvInspection } from "./internal-DuEa3aye.js";
-+import { i as ConsoleEnvInspection } from "./internal-BR-FJ0_M.js";
++import { t as ConsoleRequestEvent } from "./request-BjuvHIPy.js";
++import { i as ConsoleEnvInspection } from "./internal-BZhvR8HO.js";
  import { ServerEnvDescription, ServerEnvInspection, ServerEnvInspectionEntry } from "@vite-hub/env";
  //#region src/console/runtime/server/env.d.ts
  type ConsoleEnvStatusEntry = Pick<ServerEnvInspectionEntry, "path" | "status"> & {
-diff --git a/dist/env-taJLjzT0.js b/dist/env-D2h68Xy-.js
+diff --git a/dist/env-taJLjzT0.js b/dist/env-BDNYYIe5.js
 similarity index 96%
 rename from dist/env-taJLjzT0.js
-rename to dist/env-D2h68Xy-.js
-index 123cb4952e038175bab613f072edc3133ec2d6d5..2a9fd90b41db61d9883bd759e6b07e15d590e300 100644
+rename to dist/env-BDNYYIe5.js
+index 123cb4952e038175bab613f072edc3133ec2d6d5..dcd6fc22f95a4e2268c768b3fafe8248d8819cf5 100644
 --- a/dist/env-taJLjzT0.js
-+++ b/dist/env-D2h68Xy-.js
++++ b/dist/env-BDNYYIe5.js
 @@ -1,6 +1,6 @@
  import { l as installConsoleEnvScope, x as resolveConsoleEnv } from "./internal-Ca7DYHpa.js";
  import { r as consoleDiagnosticBody } from "./diagnostics-YTWM3K3t.js";
 -import { i as getConsoleSections } from "./sections-DK32Kvve.js";
-+import { i as getConsoleSections } from "./sections-CdcqMkrI.js";
++import { i as getConsoleSections } from "./sections-YvESaauO.js";
  import { isBlockingServerEnvEntry } from "@vite-hub/env";
  //#region src/console/runtime/server/env.ts
  function installConsoleEnv(projectRoot, description, manage, inspect) {
@@ -6015,58 +6524,108 @@ index 44f857f12be964829afb6ccf6e745f176ea74ed6..b491da60cd41d61b844db884aa293357
  export { type AgentInvocationsDefault, type CacheOptions, type ConsoleOptions, DeploymentPreset, type LogsEvlogOptions, type LogsOptions, type ObservabilityEvlogOptions, type ObservabilityOptions, ViteHubAgentOptions, ViteHubConfig, ViteHubOptions, vitehub };
 \ No newline at end of file
 diff --git a/dist/index.js b/dist/index.js
-index d2e440cbdd61dc1a2d65714fbdf3575a2392772c..7f63778445fb9b40fcb527fad8b8787fcd5be718 100644
+index d2e440cbdd61dc1a2d65714fbdf3575a2392772c..05209ebcf77964f01f2f956a231988e33ec316c9 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -1,2 +1,2 @@
 -import { t as vitehub } from "./src-B4w_n8jH.js";
-+import { t as vitehub } from "./src-CKCroLrQ.js";
++import { t as vitehub } from "./src-1_91wXa7.js";
  export { vitehub };
-diff --git a/dist/internal-DuEa3aye.d.ts b/dist/internal-BR-FJ0_M.d.ts
-similarity index 97%
+diff --git a/dist/internal-DuEa3aye.d.ts b/dist/internal-BZhvR8HO.d.ts
+similarity index 91%
 rename from dist/internal-DuEa3aye.d.ts
-rename to dist/internal-BR-FJ0_M.d.ts
-index fc0bf2c339aabd6e1f6acafcfd19a80a30a4fcde..6605043c77bbb8c07855687cd42a193f9f64737d 100644
+rename to dist/internal-BZhvR8HO.d.ts
+index fc0bf2c339aabd6e1f6acafcfd19a80a30a4fcde..48267ea028bfe214a05e75d8b69b939e0a928d04 100644
 --- a/dist/internal-DuEa3aye.d.ts
-+++ b/dist/internal-BR-FJ0_M.d.ts
++++ b/dist/internal-BZhvR8HO.d.ts
 @@ -1,6 +1,6 @@
- import { t as ConsoleRequestEvent } from "./request-DOvvVgpI.js";
+-import { t as ConsoleRequestEvent } from "./request-DOvvVgpI.js";
++import { t as ConsoleRequestEvent } from "./request-BjuvHIPy.js";
  import "./sections-kOFhY9V1.js";
 -import "./documents-BYEFlt-w.js";
-+import "./documents-CwPnM24C.js";
++import "./documents-C9s5p1Ef.js";
  import { AgentInvocations } from "@vite-hub/agent";
  import { BlobStorage } from "@vite-hub/blob";
  import { ScheduleDefinitionRegistry } from "@vite-hub/schedule";
-diff --git a/dist/media-B1bEskJR.js b/dist/media-B1bEskJR.js
-new file mode 100644
-index 0000000000000000000000000000000000000000..c5bd2203ffdfe7ab1a382783e45655ffb90df0c3
---- /dev/null
-+++ b/dist/media-B1bEskJR.js
-@@ -0,0 +1,3 @@
-+import "./operations-FgoHf9XM.js";
-+import { a as runConsoleMediaAction } from "./media-DiTjqeCh.js";
-+export { runConsoleMediaAction };
-diff --git a/dist/media-Cl0-HJoh.js b/dist/media-Cl0-HJoh.js
-deleted file mode 100644
-index 79123dd48f0b7927f8ee5d0001dea150ffdddd5c..0000000000000000000000000000000000000000
-diff --git a/dist/media-ZX_6SCUC.js b/dist/media-DiTjqeCh.js
-similarity index 99%
+diff --git a/dist/loopback-C7-B2ban.js b/dist/loopback-No5Kized.js
+similarity index 98%
+rename from dist/loopback-C7-B2ban.js
+rename to dist/loopback-No5Kized.js
+index a49bfd6ac8a5815c043820dd70f511717502d427..61763d8d2b11dfe032402c68ccf8792db5d017c6 100644
+--- a/dist/loopback-C7-B2ban.js
++++ b/dist/loopback-No5Kized.js
+@@ -1,4 +1,4 @@
+-import { n as consoleRequestError, u as isConsoleDevelopmentBuild } from "./request-C4Dq-a_0.js";
++import { n as consoleRequestError, u as isConsoleDevelopmentBuild } from "./request-B8U5GgEf.js";
+ //#region src/console/runtime/server/loopback.ts
+ const loopbackHosts = /* @__PURE__ */ new Set([
+ 	"localhost",
+diff --git a/dist/mcp-authorization-server-D3b41Igu.js b/dist/mcp-authorization-server-B173ejmZ.js
+similarity index 96%
+rename from dist/mcp-authorization-server-D3b41Igu.js
+rename to dist/mcp-authorization-server-B173ejmZ.js
+index 549091346a0ee3872766d1de28de03a428e2afe8..37d48da96b8e50e0830c8d4e3699a61d04047968 100644
+--- a/dist/mcp-authorization-server-D3b41Igu.js
++++ b/dist/mcp-authorization-server-B173ejmZ.js
+@@ -1,7 +1,7 @@
+ import { s as resolveConsoleOAuth } from "./bearer-B2l_B7Hz.js";
+ import { r as consoleDiagnosticBody } from "./diagnostics-YTWM3K3t.js";
+-import { o as isConsoleDevelopmentRuntime } from "./request-C4Dq-a_0.js";
+-import { h as consoleRequest, y as installedConsoleOAuth } from "./access-CzCj1hAY.js";
++import { o as isConsoleDevelopmentRuntime } from "./request-B8U5GgEf.js";
++import { h as consoleRequest, y as installedConsoleOAuth } from "./access-K9p_blZk.js";
+ //#region src/console/runtime/server/mcp-authorization-server.ts
+ /**
+ * OAuth 2.0 authorization server metadata (RFC 8414) of the Better Auth that signs MCP clients in, at the origin root
+diff --git a/dist/mcp-metadata-BaGLW26q.js b/dist/mcp-metadata-DqaLNhz9.js
+similarity index 95%
+rename from dist/mcp-metadata-BaGLW26q.js
+rename to dist/mcp-metadata-DqaLNhz9.js
+index c5afa4ef84d13ff22055642ea83fa7891121f556..c2c55de6f744e68cad8560a324612eceb97271a3 100644
+--- a/dist/mcp-metadata-BaGLW26q.js
++++ b/dist/mcp-metadata-DqaLNhz9.js
+@@ -1,7 +1,7 @@
+ import { n as consoleMcpScopes, s as resolveConsoleOAuth } from "./bearer-B2l_B7Hz.js";
+ import { r as consoleDiagnosticBody } from "./diagnostics-YTWM3K3t.js";
+-import { o as isConsoleDevelopmentRuntime } from "./request-C4Dq-a_0.js";
+-import { h as consoleRequest, y as installedConsoleOAuth } from "./access-CzCj1hAY.js";
++import { o as isConsoleDevelopmentRuntime } from "./request-B8U5GgEf.js";
++import { h as consoleRequest, y as installedConsoleOAuth } from "./access-K9p_blZk.js";
+ //#region src/console/runtime/server/mcp-metadata.ts
+ const headers = {
+ 	"cache-control": "no-store",
+diff --git a/dist/media-ZX_6SCUC.js b/dist/media-BvEFIELL.js
+similarity index 98%
 rename from dist/media-ZX_6SCUC.js
-rename to dist/media-DiTjqeCh.js
-index 1887d7a43cef3590f3e7c04914190543eb756480..c978ec9358122d744e8f8864ca677cb4b55b9573 100644
+rename to dist/media-BvEFIELL.js
+index 1887d7a43cef3590f3e7c04914190543eb756480..a3e7a8f1d14bc03f93f4df8db82337c9a296dc81 100644
 --- a/dist/media-ZX_6SCUC.js
-+++ b/dist/media-DiTjqeCh.js
++++ b/dist/media-BvEFIELL.js
 @@ -1,8 +1,8 @@
- import { n as consoleRequestError } from "./request-C4Dq-a_0.js";
+-import { n as consoleRequestError } from "./request-C4Dq-a_0.js";
++import { n as consoleRequestError } from "./request-B8U5GgEf.js";
  import { t as getConsoleBlob } from "./blob-BCuCE2bZ.js";
- import { i as consoleAccessAllows } from "./access-CzCj1hAY.js";
+-import { i as consoleAccessAllows } from "./access-CzCj1hAY.js";
 -import { i as getConsoleSections } from "./sections-DK32Kvve.js";
 -import { a as loadConsoleDocumentActions, n as consoleDocumentActionContext, s as runConsoleDocumentAction, t as consoleActionError } from "./documents-DWE_IUQE.js";
-+import { i as getConsoleSections } from "./sections-CdcqMkrI.js";
-+import { a as loadConsoleDocumentActions, n as consoleDocumentActionContext, s as runConsoleDocumentAction, t as consoleActionError } from "./documents-ChBU46qO.js";
++import { i as consoleAccessAllows } from "./access-K9p_blZk.js";
++import { i as getConsoleSections } from "./sections-YvESaauO.js";
++import { a as loadConsoleDocumentActions, n as consoleDocumentActionContext, s as runConsoleDocumentAction, t as consoleActionError } from "./documents-CDljhf6M.js";
  import { getBlobRuntimeConfig } from "@vite-hub/blob/runtime/state";
  //#region src/console/runtime/server/media.ts
  /**
+diff --git a/dist/media-Cl0-HJoh.js b/dist/media-Cl0-HJoh.js
+deleted file mode 100644
+index 79123dd48f0b7927f8ee5d0001dea150ffdddd5c..0000000000000000000000000000000000000000
+diff --git a/dist/media-Du3Jl6LV.js b/dist/media-Du3Jl6LV.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..f0ed32d8df829317584ae0f827527899313ef383
+--- /dev/null
++++ b/dist/media-Du3Jl6LV.js
+@@ -0,0 +1,3 @@
++import "./operations-DWQxWnp0.js";
++import { a as runConsoleMediaAction } from "./media-BvEFIELL.js";
++export { runConsoleMediaAction };
 diff --git a/dist/media-library-CoBPljLI.d.ts b/dist/media-library-AF8Cwqwc.d.ts
 similarity index 87%
 rename from dist/media-library-CoBPljLI.d.ts
@@ -6130,7 +6689,7 @@ index 150cb092c18b4c77bb9b701cee8bafd9d57a1c7a..4ad0cb8fe4251b0ee6f8ed0e710f5f97
  //#region src/nuxt.d.ts
  type ViteHubNuxtOptions = Omit<Parameters<typeof vitehub>[0], "database" | "env"> & {
 diff --git a/dist/nuxt.js b/dist/nuxt.js
-index 7bd5f1b2d5b6034987b1dd94140ebdf62649f60b..d57803995256cc487204f312fe413a2ab249693e 100644
+index 7bd5f1b2d5b6034987b1dd94140ebdf62649f60b..326bb3f3b9e5561866c3a54a158b1577b1c41ed9 100644
 --- a/dist/nuxt.js
 +++ b/dist/nuxt.js
 @@ -1,10 +1,10 @@
@@ -6138,38 +6697,48 @@ index 7bd5f1b2d5b6034987b1dd94140ebdf62649f60b..d57803995256cc487204f312fe413a2a
  import { a as VITEHUB_PROJECT_ROOT, d as resolveViteHubProjectRoot, i as VITEHUB_NITRO_CONFIG_CONTEXT, n as VITEHUB_APP_BASE_URL, o as VITEHUB_SERVER_DIRS, r as VITEHUB_GENERATED_ROOT, u as resolveNuxtServerDirs } from "./types-B2WchHXx.js";
  import { a as isPlainObject, i as requireOptionalOwner, n as importOptionalOwner } from "./optional-owners-DZ488ORF.js";
 -import { $ as removeViteHubDevServerFile, A as createNitroServerKit, B as hasUpstashStore, C as writeConsoleNitroPlugin, D as consoleDocumentEditorSectionIds, E as consoleContributedSections, F as writeConsoleAuthHandlers, G as nitroCacheBypass, H as markCmsPresetFeaturesResolved, I as writeConsoleConnectionsActor, J as consoleDatabaseUrl, K as describeDeploymentPlanOutput, L as writeFileIfChanged, M as consoleConnectionsActorId, N as registeredConsoleAuthMode, O as discoverConsoleEntrySections, P as resolveConsoleAuthConfig, Q as ownerModules, R as disabledKVConfigModule, S as assertConsoleRetention, T as discoverConsoleBuildCatalog, U as resolveCmsPresetFeatures, V as upstashDriverSpecifier, W as isIncludedNitroPlugin, X as withConnectionsDatabase, Y as resolveConsoleJournal, Z as withDataDir, _ as addConsolePageHandlers, a as configureConsoleFixtureLifecycle, b as createConsoleCliNamespace, c as consoleOpenAccessBuildWarning, d as resolveConsoleAccessBuild, et as writeViteHubDevServerFile, f as resolveConsoleOptions, g as consoleNuxtDevToolsTab, h as consoleOperationFeatures, i as closeConsoleInvocationRootState, j as consoleAuthMiddlewareFile, k as isConsoleContributedSectionId, l as createConsoleInvocationRootState, m as updateConsoleInvocationRootState, n as assertConsoleAccess, o as consoleAuthConfig, p as resolveGeneratedConsolePlugin, q as consoleD1Binding, r as assertConsoleProductionAccess, s as consoleInvocationRootPlugin, t as vitehub, u as generatedConsolePluginRegistration, v as addConsoleRpcHandler, w as resolveConsoleProjectNameFromRoot, x as serializeConsoleRefresh, y as mountPath, z as disabledUpstashDriver } from "./src-B4w_n8jH.js";
-+import { $ as removeViteHubDevServerFile, A as createNitroServerKit, B as hasUpstashStore, C as writeConsoleNitroPlugin, D as consoleDocumentEditorSectionIds, E as consoleContributedSections, F as writeConsoleAuthHandlers, G as nitroCacheBypass, H as markCmsPresetFeaturesResolved, I as writeConsoleConnectionsActor, J as consoleDatabaseUrl, K as describeDeploymentPlanOutput, L as writeFileIfChanged, M as consoleConnectionsActorId, N as registeredConsoleAuthMode, O as discoverConsoleEntrySections, P as resolveConsoleAuthConfig, Q as ownerModules, R as disabledKVConfigModule, S as assertConsoleRetention, T as discoverConsoleBuildCatalog, U as resolveCmsPresetFeatures, V as upstashDriverSpecifier, W as isIncludedNitroPlugin, X as withConnectionsDatabase, Y as resolveConsoleJournal, Z as withDataDir, _ as addConsolePageHandlers, a as configureConsoleFixtureLifecycle, b as createConsoleCliNamespace, c as consoleOpenAccessBuildWarning, d as resolveConsoleAccessBuild, et as writeViteHubDevServerFile, f as resolveConsoleOptions, g as consoleNuxtDevToolsTab, h as consoleOperationFeatures, i as closeConsoleInvocationRootState, j as consoleAuthMiddlewareFile, k as isConsoleContributedSectionId, l as createConsoleInvocationRootState, m as updateConsoleInvocationRootState, n as assertConsoleAccess, o as consoleAuthConfig, p as resolveGeneratedConsolePlugin, q as consoleD1Binding, r as assertConsoleProductionAccess, s as consoleInvocationRootPlugin, t as vitehub, u as generatedConsolePluginRegistration, v as addConsoleRpcHandler, w as resolveConsoleProjectNameFromRoot, x as serializeConsoleRefresh, y as mountPath, z as disabledUpstashDriver } from "./src-CKCroLrQ.js";
++import { $ as removeViteHubDevServerFile, A as createNitroServerKit, B as hasUpstashStore, C as writeConsoleNitroPlugin, D as consoleDocumentEditorSectionIds, E as consoleContributedSections, F as writeConsoleAuthHandlers, G as nitroCacheBypass, H as markCmsPresetFeaturesResolved, I as writeConsoleConnectionsActor, J as consoleDatabaseUrl, K as describeDeploymentPlanOutput, L as writeFileIfChanged, M as consoleConnectionsActorId, N as registeredConsoleAuthMode, O as discoverConsoleEntrySections, P as resolveConsoleAuthConfig, Q as ownerModules, R as disabledKVConfigModule, S as assertConsoleRetention, T as discoverConsoleBuildCatalog, U as resolveCmsPresetFeatures, V as upstashDriverSpecifier, W as isIncludedNitroPlugin, X as withConnectionsDatabase, Y as resolveConsoleJournal, Z as withDataDir, _ as addConsolePageHandlers, a as configureConsoleFixtureLifecycle, b as createConsoleCliNamespace, c as consoleOpenAccessBuildWarning, d as resolveConsoleAccessBuild, et as writeViteHubDevServerFile, f as resolveConsoleOptions, g as consoleNuxtDevToolsTab, h as consoleOperationFeatures, i as closeConsoleInvocationRootState, j as consoleAuthMiddlewareFile, k as isConsoleContributedSectionId, l as createConsoleInvocationRootState, m as updateConsoleInvocationRootState, n as assertConsoleAccess, o as consoleAuthConfig, p as resolveGeneratedConsolePlugin, q as consoleD1Binding, r as assertConsoleProductionAccess, s as consoleInvocationRootPlugin, t as vitehub, u as generatedConsolePluginRegistration, v as addConsoleRpcHandler, w as resolveConsoleProjectNameFromRoot, x as serializeConsoleRefresh, y as mountPath, z as disabledUpstashDriver } from "./src-1_91wXa7.js";
  import { r as createConsoleInvocationsIdentity } from "./internal-Ca7DYHpa.js";
  import { D as resolveConsoleSectionIds, b as isConsoleConnectionsEnabled } from "./sections-CkdcIR0A.js";
 -import { o as installConsoleProjectName, s as installConsoleSections } from "./sections-DK32Kvve.js";
-+import { o as installConsoleProjectName, s as installConsoleSections } from "./sections-CdcqMkrI.js";
++import { o as installConsoleProjectName, s as installConsoleSections } from "./sections-YvESaauO.js";
  import { i as readConsoleFixture, n as consoleFixtureEnvironmentVariable, r as consoleFixtureRevision } from "./retention-BEzWEuzn.js";
  import { a as resolveDeploymentPlan, i as normalizeNitroPreset, t as detectPreset } from "./deployment-C4hwVDCH.js";
  import { findPackageJSON } from "node:module";
+diff --git a/dist/operations-CJyc_hoY.js b/dist/operations-CJyc_hoY.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..54da562977e91ee56ad6a53465cdc80a5ab046cd
+--- /dev/null
++++ b/dist/operations-CJyc_hoY.js
+@@ -0,0 +1,2 @@
++import { n as consoleOperations } from "./operations-DWQxWnp0.js";
++export { consoleOperations };
 diff --git a/dist/operations-ClNeVWlp.js b/dist/operations-ClNeVWlp.js
 deleted file mode 100644
 index 3b7e684221ad33dd7e490696cf737f63953e253f..0000000000000000000000000000000000000000
-diff --git a/dist/operations-D52g4vyl.js b/dist/operations-D52g4vyl.js
-new file mode 100644
-index 0000000000000000000000000000000000000000..5033c74933302430a43c9a787e50350773328f1a
---- /dev/null
-+++ b/dist/operations-D52g4vyl.js
-@@ -0,0 +1,2 @@
-+import { n as consoleOperations } from "./operations-FgoHf9XM.js";
-+export { consoleOperations };
-diff --git a/dist/operations-DbqtgDX-.js b/dist/operations-FgoHf9XM.js
-similarity index 99%
+diff --git a/dist/operations-DbqtgDX-.js b/dist/operations-DWQxWnp0.js
+similarity index 98%
 rename from dist/operations-DbqtgDX-.js
-rename to dist/operations-FgoHf9XM.js
-index e956a4fc902799c2061f00d360e759212431dd4b..7720188a5043f4e8c3b5cbbee2468806819f4cf8 100644
+rename to dist/operations-DWQxWnp0.js
+index e956a4fc902799c2061f00d360e759212431dd4b..21ec2dfb12d3032fe575a295cb767ca9a47694a3 100644
 --- a/dist/operations-DbqtgDX-.js
-+++ b/dist/operations-FgoHf9XM.js
++++ b/dist/operations-DWQxWnp0.js
+@@ -1,7 +1,7 @@
+ import { t as viteHubErrorDiagnostics } from "./error-diagnostics-BkdNFB_6.js";
+ import { d as operationCall, m as operationSection, o as defineOperation, u as operationAccessAllows } from "./operations-B8znjKbr.js";
+-import { n as consoleRequestError } from "./request-C4Dq-a_0.js";
+-import { f as consoleOperationAccess, n as bindConsoleAccess } from "./access-CzCj1hAY.js";
++import { n as consoleRequestError } from "./request-B8U5GgEf.js";
++import { f as consoleOperationAccess, n as bindConsoleAccess } from "./access-K9p_blZk.js";
+ import * as v from "valibot";
+ /** Bodies carry a whole Markdown document, so they may exceed the ordinary Console request limit. */
+ const maximumConsoleDocumentRequestBytes = 1048576;
 @@ -136,7 +136,7 @@ const agentsInvoke = defineConsoleOperation({
  	kind: "write",
  	maxRequestBytes: consoleOperationRequestBytes["agents.invoke"],
  	name: "agents.invoke",
 -	run: async ({ agent, agentRoute, ...body }, context) => (await (import.meta.viteHubConsoleAgents === false ? disabledConsoleFeature("Agents") : import("./agent-invocations.post-CIx0VFGn.js"))).default(legacyEvent(`agents/${agent}/invocations`, "POST", {
-+	run: async ({ agent, agentRoute, ...body }, context) => (await (import.meta.viteHubConsoleAgents === false ? disabledConsoleFeature("Agents") : import("./agent-invocations.post-DhQn27Pk.js"))).default(legacyEvent(`agents/${agent}/invocations`, "POST", {
++	run: async ({ agent, agentRoute, ...body }, context) => (await (import.meta.viteHubConsoleAgents === false ? disabledConsoleFeature("Agents") : import("./agent-invocations.post-0JU-PfBu.js"))).default(legacyEvent(`agents/${agent}/invocations`, "POST", {
  		agent,
  		body,
  		query: { agentRoute }
@@ -6178,10 +6747,19 @@ index e956a4fc902799c2061f00d360e759212431dd4b..7720188a5043f4e8c3b5cbbee2468806
  	readOnlyWhen: ({ action }) => consoleMediaReadActions.has(action),
  	name: "media.action",
 -	run: async ({ action, body, section }, context) => (await import("./media-Cl0-HJoh.js")).runConsoleMediaAction(section, action, body, context.access),
-+	run: async ({ action, body, section }, context) => (await import("./media-B1bEskJR.js")).runConsoleMediaAction(section, action, body, context.access),
++	run: async ({ action, body, section }, context) => (await import("./media-Du3Jl6LV.js")).runConsoleMediaAction(section, action, body, context.access),
  	section: (input) => input.section
  });
  const searchQuery = defineConsoleOperation({
+@@ -402,7 +402,7 @@ const skillsInspect = defineConsoleOperation({
+ 	}),
+ 	kind: "read",
+ 	name: "skills.inspect",
+-	run: async (input, context) => (await (import.meta.viteHubConsoleAgents === false ? disabledConsoleFeature("Agents") : import("./skills.get-BDsSohdx.js"))).default(legacyEvent("skills", "GET", { query: input }, context)),
++	run: async (input, context) => (await (import.meta.viteHubConsoleAgents === false ? disabledConsoleFeature("Agents") : import("./skills.get-SWAv-58h.js"))).default(legacyEvent("skills", "GET", { query: input }, context)),
+ 	section: "skills"
+ });
+ const statusGet = defineConsoleOperation({
 diff --git a/dist/page-tools-CUck30WZ.js b/dist/page-tools-BLuzm5PS.js
 similarity index 79%
 rename from dist/page-tools-CUck30WZ.js
@@ -6455,6 +7033,40 @@ index 0000000000000000000000000000000000000000..4b3ba91440bbae20ffb69690bee09aa6
 diff --git a/dist/page-tools-shared-WAApwRWC.js b/dist/page-tools-shared-WAApwRWC.js
 deleted file mode 100644
 index 0679a93b1caa2181b3a781c2b66a4f9b3a486d18..0000000000000000000000000000000000000000
+diff --git a/dist/request-C4Dq-a_0.js b/dist/request-B8U5GgEf.js
+similarity index 94%
+rename from dist/request-C4Dq-a_0.js
+rename to dist/request-B8U5GgEf.js
+index 20d3f38e3ba52805d9e3692ed023336c3cf39968..11db1e275580f8280befdd62b68ce590a7dc3b2b 100644
+--- a/dist/request-C4Dq-a_0.js
++++ b/dist/request-B8U5GgEf.js
+@@ -62,6 +62,10 @@ async function consoleRequestText(fetchBody, maximumBytes = maximumConsoleReques
+ }
+ async function consoleRequestJSON(event, maximumBytes = maximumConsoleRequestBodyBytes) {
+ 	const fetchBody = event.req?.body;
++	if (typeof fetchBody === "string" || fetchBody instanceof Uint8Array) {
++		if ((typeof fetchBody === "string" ? stringByteLength(fetchBody) : fetchBody.byteLength) > maximumBytes) throw consoleRequestError(413, "Console request body exceeds the byte limit.");
++		return JSON.parse(typeof fetchBody === "string" ? fetchBody : new TextDecoder().decode(fetchBody));
++	}
+ 	if (fetchBody) return JSON.parse(await consoleRequestText(fetchBody, maximumBytes));
+ 	if (event.req?.json) {
+ 		const body = await event.req.json();
+diff --git a/dist/request-DOvvVgpI.d.ts b/dist/request-BjuvHIPy.d.ts
+similarity index 94%
+rename from dist/request-DOvvVgpI.d.ts
+rename to dist/request-BjuvHIPy.d.ts
+index d3c80a3b07bb64c48169d89beb7790013e3938e5..8b0de729cfe6f99a9e56041a1fa7c5397ac4fc3b 100644
+--- a/dist/request-DOvvVgpI.d.ts
++++ b/dist/request-BjuvHIPy.d.ts
+@@ -28,7 +28,7 @@ interface ConsoleRequestEvent {
+     };
+   };
+   req?: {
+-    body?: ReadableStream<Uint8Array> | null;
++    body?: ReadableStream<Uint8Array> | Uint8Array | string | null;
+     context?: {
+       clientAddress?: string;
+       [key: string]: unknown;
 diff --git a/dist/route-query-CgFwjg6Y.js b/dist/route-query-CgFwjg6Y.js
 new file mode 100644
 index 0000000000000000000000000000000000000000..bccbc92917fa99024d2d23e3166a39d23fff3a29
@@ -6677,6 +7289,22 @@ index 0000000000000000000000000000000000000000..bccbc92917fa99024d2d23e3166a39d2
 +}
 +//#endregion
 +export { querySelection as a, useConsoleQuery as c, queryInteger as i, writeConsoleQuery as l, queryChoice as n, queryText as o, queryFlag as r, readConsoleQuery as s, consoleQueryText as t };
+diff --git a/dist/sections-D_X6XI3W.d.ts b/dist/sections--9qVEOz-.d.ts
+similarity index 96%
+rename from dist/sections-D_X6XI3W.d.ts
+rename to dist/sections--9qVEOz-.d.ts
+index d0bde07f54774ad9681de23ea0efa58aa386048d..784a8672d1cb82e249c09899eacec2f66a542b85 100644
+--- a/dist/sections-D_X6XI3W.d.ts
++++ b/dist/sections--9qVEOz-.d.ts
+@@ -1,6 +1,6 @@
+-import "./access-CpLFMg2M.js";
++import "./access-DGFRFq21.js";
+ import { a as ConsoleSectionId } from "./sections-kOFhY9V1.js";
+-import { t as ConsoleAuthMode } from "./internal-DuEa3aye.js";
++import { t as ConsoleAuthMode } from "./internal-BZhvR8HO.js";
+ import "./auth-pages-zZQJ0iN3.js";
+ import { t as ViteHubPageToolsInstallOptions } from "./page-tools-C5dufxVz.js";
+ import "./operation-contributions-CRTIo72s.js";
 diff --git a/dist/sections-CbhfnIQb.js b/dist/sections-BIYhXuVx.js
 similarity index 99%
 rename from dist/sections-CbhfnIQb.js
@@ -6703,20 +7331,21 @@ index 1510c3973dd3e63e12d506015567d853b7260366..05ae1466018dd578807cd3e377d723c2
  import { a as ConsoleSectionId, r as ConsoleSectionDetails } from "./sections-kOFhY9V1.js";
  //#region src/console/runtime/client/sections.d.ts
  interface ConsoleNavigation {
-diff --git a/dist/sections-DK32Kvve.js b/dist/sections-CdcqMkrI.js
-similarity index 96%
+diff --git a/dist/sections-DK32Kvve.js b/dist/sections-YvESaauO.js
+similarity index 95%
 rename from dist/sections-DK32Kvve.js
-rename to dist/sections-CdcqMkrI.js
-index 36b603792ae821de2a66e32537b6ec0c524ee168..ff30a2d9efc59a405a9b9782f000c14c7d769e86 100644
+rename to dist/sections-YvESaauO.js
+index 36b603792ae821de2a66e32537b6ec0c524ee168..c8051dc4fc5ae14ec75d8fdb30b78b5d64466e57 100644
 --- a/dist/sections-DK32Kvve.js
-+++ b/dist/sections-CdcqMkrI.js
++++ b/dist/sections-YvESaauO.js
 @@ -1,8 +1,8 @@
  import { _ as operationsOf, i as createOperationRegistry, s as installOperationRegistry } from "./operations-B8znjKbr.js";
  import { E as resolveConsoleProjectName, O as resolveConsoleSections, _ as resolveConsoleBuild, a as installConsoleBuildScope, d as installConsoleProjectNameScope, h as resolveConsoleAuth, p as installConsoleSectionScope } from "./internal-Ca7DYHpa.js";
- import { o as consoleAllowsRequest } from "./access-CzCj1hAY.js";
+-import { o as consoleAllowsRequest } from "./access-CzCj1hAY.js";
 -import { n as consoleOperations } from "./operations-DbqtgDX-.js";
 -import { n as registerViteHubPageTool, t as installViteHubPageTools } from "./page-tools-CUck30WZ.js";
-+import { n as consoleOperations } from "./operations-FgoHf9XM.js";
++import { o as consoleAllowsRequest } from "./access-K9p_blZk.js";
++import { n as consoleOperations } from "./operations-DWQxWnp0.js";
 +import { n as registerViteHubPageTool, t as installViteHubPageTools } from "./page-tools-BLuzm5PS.js";
  //#region src/console/runtime/server/operation-contributions.ts
  const contributionKey = Symbol.for("vitehub.console.operations");
@@ -6730,53 +7359,55 @@ index 36b603792ae821de2a66e32537b6ec0c524ee168..ff30a2d9efc59a405a9b9782f000c14c
  /**
  * Registers the Console and Content windows in the page tools pill. The Console access policy decides
  * who gets it, so in `local` mode only the development server shows it. Generated Console output calls this with the
-diff --git a/dist/sections-D_X6XI3W.d.ts b/dist/sections-DA5R5TpW.d.ts
-similarity index 97%
-rename from dist/sections-D_X6XI3W.d.ts
-rename to dist/sections-DA5R5TpW.d.ts
-index d0bde07f54774ad9681de23ea0efa58aa386048d..4e7ef6e919952d284558f43d2d654706ce55206b 100644
---- a/dist/sections-D_X6XI3W.d.ts
-+++ b/dist/sections-DA5R5TpW.d.ts
-@@ -1,6 +1,6 @@
- import "./access-CpLFMg2M.js";
- import { a as ConsoleSectionId } from "./sections-kOFhY9V1.js";
--import { t as ConsoleAuthMode } from "./internal-DuEa3aye.js";
-+import { t as ConsoleAuthMode } from "./internal-BR-FJ0_M.js";
- import "./auth-pages-zZQJ0iN3.js";
- import { t as ViteHubPageToolsInstallOptions } from "./page-tools-C5dufxVz.js";
- import "./operation-contributions-CRTIo72s.js";
-diff --git a/dist/server-BRsPaQCl.d.ts b/dist/server-DLiP1EuQ.d.ts
+diff --git a/dist/server-BRsPaQCl.d.ts b/dist/server-DCnTWYk1.d.ts
 similarity index 87%
 rename from dist/server-BRsPaQCl.d.ts
-rename to dist/server-DLiP1EuQ.d.ts
-index 526707d09ad60d420ce869a86a6f2da3cf322984..f67021bbd1fb1e08d8ea7b7a7a3ff36318001934 100644
+rename to dist/server-DCnTWYk1.d.ts
+index 526707d09ad60d420ce869a86a6f2da3cf322984..082459af3c445a2067354207f8552f1ca520f6cb 100644
 --- a/dist/server-BRsPaQCl.d.ts
-+++ b/dist/server-DLiP1EuQ.d.ts
++++ b/dist/server-DCnTWYk1.d.ts
 @@ -1,8 +1,8 @@
  import { d as ConsoleInvocationsDatabase } from "./agents-tizSlFQE.js";
 -import "./sections-D_X6XI3W.js";
 -import "./blob-DGFTF1Qb.js";
 -import "./definitions-CPvzh7az.js";
 -import "./database-uttSZHX1.js";
-+import "./sections-DA5R5TpW.js";
-+import "./blob-TmgR0h-1.js";
++import "./sections--9qVEOz-.js";
++import "./blob-CAMoErU6.js";
 +import "./definitions-BNgGxz3s.js";
-+import "./database-hgptXXbE.js";
++import "./database-CI6Rbfy5.js";
  import { AgentInvocations } from "@vite-hub/agent";
  import { RuntimeHostContext } from "@vite-hub/runtime";
  //#region src/console/server.d.ts
-diff --git a/dist/src-B4w_n8jH.js b/dist/src-CKCroLrQ.js
+diff --git a/dist/skills.get-BDsSohdx.js b/dist/skills.get-SWAv-58h.js
+similarity index 94%
+rename from dist/skills.get-BDsSohdx.js
+rename to dist/skills.get-SWAv-58h.js
+index a8a707bb87ca32ac57663fc673066b0da308db1f..17733b7ed62ea9c608ab1263650bd9a0efcdf381 100644
+--- a/dist/skills.get-BDsSohdx.js
++++ b/dist/skills.get-SWAv-58h.js
+@@ -1,5 +1,5 @@
+-import { a as consoleRequestURL, n as consoleRequestError, t as assertConsoleRequest } from "./request-C4Dq-a_0.js";
+-import { w as withConsoleAccess } from "./access-CzCj1hAY.js";
++import { a as consoleRequestURL, n as consoleRequestError, t as assertConsoleRequest } from "./request-B8U5GgEf.js";
++import { w as withConsoleAccess } from "./access-K9p_blZk.js";
+ import { i as getConsoleAgents, r as getConsoleAgentDefinition } from "./agents-B-aCL9zR.js";
+ import { inspectAgentSkillFiles } from "@vite-hub/agent/server/internal";
+ //#region src/console/runtime/server/skills.get.ts
+diff --git a/dist/src-B4w_n8jH.js b/dist/src-1_91wXa7.js
 similarity index 99%
 rename from dist/src-B4w_n8jH.js
-rename to dist/src-CKCroLrQ.js
-index c0f4b7e5647c5d985ac320cbd80f602d14d44917..bd44ea90ea18fe9703658d4afc98632aee041205 100644
+rename to dist/src-1_91wXa7.js
+index c0f4b7e5647c5d985ac320cbd80f602d14d44917..d0cd916b9f482a42dd94552a249318bee0cc76d9 100644
 --- a/dist/src-B4w_n8jH.js
-+++ b/dist/src-CKCroLrQ.js
-@@ -10,7 +10,7 @@ import { n as consoleAuthMountBase, r as consoleAuthPath, t as cloudflareAccessI
++++ b/dist/src-1_91wXa7.js
+@@ -9,8 +9,8 @@ import { o as walk, r as scanModule } from "./scan-module-TmHMoGKw.js";
+ import { n as consoleAuthMountBase, r as consoleAuthPath, t as cloudflareAccessIssuer } from "./auth-path-B7Ssonj-.js";
  import { t as resolveInlineConsoleAuthGates } from "./auth-inline-config--vlclzm3.js";
  import { D as resolveConsoleSectionIds, b as isConsoleConnectionsEnabled, v as insertConsoleSection } from "./sections-CkdcIR0A.js";
- import { b as isConsoleSignInPage, d as consoleOpenAccessWarning } from "./access-CzCj1hAY.js";
+-import { b as isConsoleSignInPage, d as consoleOpenAccessWarning } from "./access-CzCj1hAY.js";
 -import { a as viteHubPageToolsInlineScript, n as viteHubPageSessionPath, r as viteHubPageToolsAssets, t as viteHubBasePath } from "./page-tools-shared-WAApwRWC.js";
++import { b as isConsoleSignInPage, d as consoleOpenAccessWarning } from "./access-K9p_blZk.js";
 +import { a as viteHubPageToolsInlineScript, n as viteHubPageSessionPath, r as viteHubPageToolsAssets, t as viteHubBasePath } from "./page-tools-shared-CZ3lGIR-.js";
  import { i as readConsoleFixture, n as consoleFixtureEnvironmentVariable, r as consoleFixtureRevision, t as consoleD1MaxSizeError } from "./retention-BEzWEuzn.js";
  import { a as resolveDeploymentPlan, i as normalizeNitroPreset, n as assertDeploymentService, r as deploymentPresetFromNitro, t as detectPreset } from "./deployment-C4hwVDCH.js";
@@ -6803,7 +7434,7 @@ index c0f4b7e5647c5d985ac320cbd80f602d14d44917..bd44ea90ea18fe9703658d4afc98632a
  */
  async function assertUniqueOperationNames(contributions) {
 -	const { consoleOperations } = await import("./operations-ClNeVWlp.js");
-+	const { consoleOperations } = await import("./operations-D52g4vyl.js");
++	const { consoleOperations } = await import("./operations-CJyc_hoY.js");
  	const sources = [{
  		operations: [...consoleOperations],
  		plugin: "vite-hub"
@@ -6867,7 +7498,7 @@ index c0f4b7e5647c5d985ac320cbd80f602d14d44917..bd44ea90ea18fe9703658d4afc98632a
  			operations: [{
  				export: "consoleOperations",
 -				load: async () => (await import("./operations-ClNeVWlp.js")).consoleOperations.filter((operation) => sections.includes("databases") || !operation.name.startsWith("databases.")),
-+				load: async () => (await import("./operations-D52g4vyl.js")).consoleOperations.filter((operation) => sections.includes("databases") || !operation.name.startsWith("databases.")),
++				load: async () => (await import("./operations-CJyc_hoY.js")).consoleOperations.filter((operation) => sections.includes("databases") || !operation.name.startsWith("databases.")),
  				module: "vite-hub/console/server",
  				runtime: false
  			}]

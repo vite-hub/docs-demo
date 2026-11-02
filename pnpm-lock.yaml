@@ -49,7 +49,7 @@ patchedDependencies:
     hash: 49f54365315f001aabe96f1385869230aafe1fb60f684a18f2d4dc86726dacbb
     path: patches/@vite-hub__docs@0.0.0-preview-0fe8108.patch
   vite-hub@0.0.0-preview-0fe8108:
-    hash: 45defe09ae19724abd8e768661a44aa35c83edbc4051f992964b7cee687e438f
+    hash: dc85f4c698460b9d80c91e7e7bc35156c59aba0efba14e04c4ffeeb7af62da95
     path: patches/vite-hub@0.0.0-preview-0fe8108.patch
 
 importers:
@@ -109,7 +109,7 @@ importers:
         version: 4.3.3
       vite-hub:
         specifier: https://pkg.pr.new/vite-hub/vitehub/vite-hub@0fe8108e18edaebe40289d722277e7b0330318f2
-        version: https://pkg.pr.new/vite-hub/vitehub/vite-hub@0fe8108e18edaebe40289d722277e7b0330318f2(patch_hash=45defe09ae19724abd8e768661a44aa35c83edbc4051f992964b7cee687e438f)(272faca60f6e79ffdade603ebe9481b8)
+        version: https://pkg.pr.new/vite-hub/vitehub/vite-hub@0fe8108e18edaebe40289d722277e7b0330318f2(patch_hash=dc85f4c698460b9d80c91e7e7bc35156c59aba0efba14e04c4ffeeb7af62da95)(272faca60f6e79ffdade603ebe9481b8)
       zod:
         specifier: ^4.6.7
         version: 4.6.7
@@ -14743,7 +14743,7 @@ snapshots:
     dependencies:
       vite: 8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
 
-  vite-hub@https://pkg.pr.new/vite-hub/vitehub/vite-hub@0fe8108e18edaebe40289d722277e7b0330318f2(patch_hash=45defe09ae19724abd8e768661a44aa35c83edbc4051f992964b7cee687e438f)(272faca60f6e79ffdade603ebe9481b8):
+  vite-hub@https://pkg.pr.new/vite-hub/vitehub/vite-hub@0fe8108e18edaebe40289d722277e7b0330318f2(patch_hash=dc85f4c698460b9d80c91e7e7bc35156c59aba0efba14e04c4ffeeb7af62da95)(272faca60f6e79ffdade603ebe9481b8):
     dependencies:
       '@cfworker/json-schema': 4.1.1
       '@cloudflare/workers-types': 5.20261102.1

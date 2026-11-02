@@ -8,17 +8,17 @@ icon: i-lucide-message-square-plus
 Signed-in users with a CMS role can comment on every page of this site. The comments are in D1, next to the users.
 
 ::steps{level="3"}
-### Turn on comment mode
+### Turn on comments
 
-Open the pill and select **Comments**.
+Open the pill and select **Comments**. The pill gets the **Comment** and **Edit** modes, and a window lists the open threads of the page.
 
 ### Pin a comment
 
-Press `C` and select a part of the page, such as a heading or a code block. Write the comment and send it. Other editors see the pin on the same element.
+Select **Comment** in the pill, or press `C`, and select a part of the page, such as a heading or a code block. Write the comment and press `Ctrl+Enter` (`⌘ Enter` on a Mac). Other editors see the pin on the same element.
 
 ### Resolve it
 
-Open the thread and select **Resolve**. The Comments section of the Console lists every thread, open and resolved.
+Open the thread and select **Resolve**. The Comments section of the Console, at [`/_vitehub/comments`](/_vitehub/comments), lists every thread, open and resolved.
 ::
 
 ::tip

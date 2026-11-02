@@ -14,7 +14,7 @@ Open the pill on the page that you want to change and select **Content**. Or ope
 
 ### Edit the draft
 
-Change the text or a frontmatter field, such as `description`. The Console saves a draft one second after you stop typing. On this site a draft is a commit on the `vitehub/content` branch of the repository.
+Change the text or a frontmatter field, such as `description`. The Console saves a draft one second after you stop typing. One person edits a page at a time: on Workers the Console has no live room, so a second editor sees the page read-only and can select **Take over**.
 
 ### Check the preview
 
@@ -22,11 +22,11 @@ Select **Preview the page**. The preview pane renders the draft through the docs
 
 ### Publish
 
-Select **Publish**. The CMS commits the page to `main`. A GitHub Actions workflow builds the site and deploys the Worker again, which takes about three minutes. Reload the page to see the change.
+Select **Publish**. The CMS marks the draft as the published version of the document.
 ::
 
 ::note
-Until the deploy ends, the site shows the published page of the last build. The Console shows the document as published at once.
+Today the CMS keeps the documents in R2 and D1, and the site renders the Markdown files of the repository. So a publish changes the published version in the Console and in `/api/content`, but not the page that readers see. When the site gets a GitHub token, the CMS switches to the GitHub store: a publish then commits the page to `main`, a GitHub Actions workflow builds and deploys the Worker again, and the change is live after about three minutes.
 ::
 
 ## What you cannot change here
