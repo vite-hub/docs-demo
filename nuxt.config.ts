@@ -31,7 +31,5 @@ export default defineNuxtConfig({
   // `Accept: text/markdown` need the Worker, so it runs first for the pages and the page JSON. vitehub.dev gets the same
   // rules from a local patch of nuxt-agent-discovery that installed apps do not get.
   nitro: { cloudflare: { wrangler: { assets: { run_worker_first: ["/", "/about", "/docs", "/docs/*", "/api/_docs/*"] } } } },
-  // Drop's review script, so reviewers can comment on this preview from any page.
-  app: { head: { script: [{ src: "https://drop.vitehub.dev/review.js", defer: true }] } },
   compatibilityDate: "2026-11-01",
 })

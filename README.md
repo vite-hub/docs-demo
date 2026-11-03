@@ -51,4 +51,4 @@ Workarounds in the app, with the finding behind each:
 
 ## Review
 
-Comment on the live pages through Drop: <https://drop.vitehub.dev/d/ej2mgej5rcs4/vitehub-docs-demo>. The site loads Drop's review script, so the Comment button shows on every page.
+Comment on the live pages with ViteHub Comments: sign in to the Console, open the page tools, and comment on a page. An Agent connected through MCP can read and answer the comments.
