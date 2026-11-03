@@ -67,7 +67,10 @@
       "esbuild",
       "workerd",
       "vue-demi"
-    ]
+    ],
+    "patchedDependencies": {
+      "@vite-hub/blob@0.0.0-preview-88e965a": "patches/@vite-hub__blob@0.0.0-preview-88e965a.patch"
+    }
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.139",

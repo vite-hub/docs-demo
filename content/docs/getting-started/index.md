@@ -7,6 +7,9 @@ layout: landing
 
 Lumen needs Node.js 24 or newer. Read the pages in order. Each one takes about five minutes.
 
+::illustration{name="getting-started" alt="A laptop with a terminal, a package box, a folder of photos, and one compressed image with a tick."}
+::
+
 ::product-features
   :::product-feature-item{title="Install Lumen" icon="i-lucide-download" to="/docs/getting-started/install"}
   Install the binary with pnpm, npm, or Homebrew, and check the version.

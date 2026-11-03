@@ -1,4 +1,6 @@
-import { publicUrl } from "./site"
+import { fileURLToPath } from "node:url"
+
+import { mediaRoute, publicUrl } from "./site"
 
 export default defineNuxtConfig({
   modules: [
@@ -7,8 +9,31 @@ export default defineNuxtConfig({
       name: "vitehub-docs-demo",
       publicUrl,
       auth: true,
+      // Two R2 buckets. `default` holds the CMS history, which only the Worker reads. `media` is the media library of
+      // the Console, served at /media for the illustrations and covers on the pages.
+      blob: {
+        stores: {
+          default: { driver: "cloudflare-r2", binding: "BLOB", bucketName: "vitehub-docs-demo" },
+          media: { driver: "cloudflare-r2", binding: "BLOB_MEDIA", bucketName: "vitehub-docs-demo-media" },
+        },
+        serve: {
+          store: "media",
+          route: mediaRoute,
+          headers: {
+            "Cache-Control": "public, max-age=300, stale-while-revalidate=86400",
+            "X-Content-Type-Options": "nosniff",
+            // Editors upload SVG files. Opened on their own, they run no script.
+            "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+          },
+        },
+      },
       // `publicUrl` does not reach the Nitro 2 server bundle of Nuxt 4, so the Console MCP needs its resource here.
-      console: { auth: "app", authorize: "./server/console-authorize.ts", mcp: { resource: `${publicUrl}/_vitehub/mcp` } },
+      // `authorize` is an absolute path: with an `app/` folder, ViteHub resolves a relative one from `app/`.
+      console: {
+        auth: "app",
+        authorize: fileURLToPath(new URL("./server/console-authorize.ts", import.meta.url)),
+        mcp: { resource: `${publicUrl}/_vitehub/mcp` },
+      },
     }],
     "@vite-hub/docs/nuxt",
   ],
@@ -21,7 +46,12 @@ export default defineNuxtConfig({
     },
     categories: ["Start", "Build", "Reference", "Demo"],
     railExclude: ["Reference"],
-    start: { section: "getting-started", links: [{ label: "All docs", to: "/docs", icon: "i-lucide-layout-grid" }, { label: "About", to: "/about", icon: "i-lucide-info" }] },
+    start: { section: "getting-started", links: [
+      { label: "All docs", to: "/docs", icon: "i-lucide-layout-grid" },
+      { label: "Blog", to: "/blog", icon: "i-lucide-newspaper" },
+      { label: "Changelog", to: "/changelog", icon: "i-lucide-history" },
+      { label: "About", to: "/about", icon: "i-lucide-info" },
+    ] },
     banner: "This is a demo of @vite-hub/docs. Sign in to edit the pages, comment on them, and connect your agent.",
     github: { repo: "vite-hub/docs-demo" },
     socials: [{ label: "ViteHub", to: "https://vitehub.dev", icon: "i-lucide-globe" }],
@@ -30,6 +60,21 @@ export default defineNuxtConfig({
   // Static assets answer before the Worker on Cloudflare. The Console preview of a draft and the Markdown answer to
   // `Accept: text/markdown` need the Worker, so it runs first for the pages and the page JSON. vitehub.dev gets the same
   // rules from a local patch of nuxt-agent-discovery that installed apps do not get.
-  nitro: { cloudflare: { wrangler: { assets: { run_worker_first: ["/", "/about", "/docs", "/docs/*", "/api/_docs/*"] } } } },
+  nitro: {
+    cloudflare: { wrangler: { assets: { run_worker_first: ["/", "/about", "/docs", "/docs/*", "/api/_docs/*"] } } },
+    // The crawler follows the links of the prerendered pages. These routes read the CMS or the media library, which the
+    // build cannot reach.
+    prerender: { ignore: ["/blog", "/changelog", mediaRoute] },
+  },
+  // The blog and the changelog read the CMS when a page is requested, so the build does not prerender them. Each Worker
+  // keeps a copy for a minute; Console previews skip it.
+  routeRules: {
+    "/blog": { prerender: false, swr: 60 },
+    "/blog/**": { prerender: false, swr: 60 },
+    "/changelog": { prerender: false, swr: 60 },
+    "/changelog/**": { prerender: false, swr: 60 },
+    "/api/blog/**": { swr: 60 },
+    "/api/changelog/**": { swr: 60 },
+  },
   compatibilityDate: "2026-11-01",
 })

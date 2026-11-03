@@ -11,8 +11,8 @@ Lumen does not exist. This site exists to show [`@vite-hub/docs`](https://vitehu
 | --- | --- |
 | Pages | Markdown files in `content/` of [vite-hub/docs-demo](https://github.com/vite-hub/docs-demo) |
 | Site | A Nuxt 4 app with `@vite-hub/docs/nuxt` and `vite-hub/nuxt` |
-| Host | Cloudflare Workers, with D1 for users, sessions, editor sessions, and comments |
-| Editing | The ViteHub CMS with the GitHub store: a save commits to a branch, a publish commits to `main` |
+| Host | Cloudflare Workers. Two D1 databases: `users` for users, sessions, and OAuth, and `content` for the CMS history, editor sessions, and comments. Two R2 buckets: the CMS documents, and the media library |
+| Editing | The ViteHub CMS on the Blob + Database store. Docs pages render from the repository; blog posts, releases, and authors render from the CMS |
 | Deploys | A GitHub Actions workflow that builds and deploys on each push to `main` |
 
 ## Why a standalone page

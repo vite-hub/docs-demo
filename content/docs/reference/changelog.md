@@ -6,20 +6,6 @@ icon: i-lucide-history
 toc: false
 ---
 
-## 1.4.0
+Every release has its notes on the [changelog page](/changelog), with the date, the changes, and a mark on releases with breaking changes. Follow new releases with the [RSS feed](/changelog/rss.xml).
 
-- `lumen compare` opens a side-by-side page of originals and results.
-- `--format markdown` prints the report as a Markdown table.
-
-## 1.3.0
-
-- AVIF output with `formats: ["avif"]`.
-- `lumen check` reads `maxSize` from the config file.
-
-## 1.2.0
-
-- Presets: `extends` in `lumen.config.json`, and the `lumen:web`, `lumen:thumbnails`, and `lumen:print` presets.
-
-## 1.0.0
-
-- The first stable release.
+The changelog is a CMS collection. Each release is one document with a `version`, a `title`, a `date`, and a `breaking` flag, so publishers add a release in the Console without a deploy.

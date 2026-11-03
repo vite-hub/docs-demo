@@ -5,7 +5,10 @@ navigation.title: Overview
 layout: landing
 ---
 
-This site is a Nuxt app on one Cloudflare Worker. The pages are Markdown files in [vite-hub/docs-demo](https://github.com/vite-hub/docs-demo). Editors change them in the ViteHub Console, and the site deploys again after each publish.
+This site is a Nuxt app on one Cloudflare Worker. The pages are Markdown files in [vite-hub/docs-demo](https://github.com/vite-hub/docs-demo). The blog posts, the changelog, and the authors are CMS documents. Editors change all of them in the ViteHub Console.
+
+::illustration{name="edit-this-site" alt="A monitor with an editor and comment bubbles, two database cylinders, a media crate, and a plug for MCP."}
+::
 
 ::product-features
   :::product-feature-item{title="The Console and the pill" icon="i-lucide-panels-top-left" to="/docs/this-site/console"}

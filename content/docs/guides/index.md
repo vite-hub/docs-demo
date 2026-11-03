@@ -7,6 +7,9 @@ layout: landing
 
 Each guide does one task from start to end. Read [Getting started](/docs/getting-started) first if Lumen is new to you.
 
+::illustration{name="guides" alt="Image frames with crop marks, a clamp that squeezes a picture, and format plates for WebP and AVIF."}
+::
+
 ::product-features
   :::product-feature-item{title="Resize images" icon="i-lucide-scaling" to="/docs/guides/resize"}
   Set a largest width, keep the aspect ratio, and make responsive sizes.

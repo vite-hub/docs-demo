@@ -27,6 +27,8 @@ Select **Publish**. The CMS marks the draft as the published version of the docu
 
 ::note
 Today the CMS keeps the documents in R2 and D1, and the site renders the Markdown files of the repository. So a publish changes the published version in the Console and in `/api/content`, but not the page that readers see. When the site gets a GitHub token, the CMS switches to the GitHub store: a publish then commits the page to `main`, a GitHub Actions workflow builds and deploys the Worker again, and the change is live after about three minutes.
+
+Blog posts, changelog releases, and authors are different: they exist only in the CMS, and the site reads the published version on each request. A publish of a post is live on [the blog](/blog) within a minute.
 ::
 
 ## What you cannot change here

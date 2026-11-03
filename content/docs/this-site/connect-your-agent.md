@@ -40,7 +40,7 @@ The docs server reads the published pages. The Console server acts as you, with 
 Ask your agent, for example: "Read /docs/guides/compress with content_show and add a sentence about AVIF to the first paragraph. Save it as a draft." The agent calls `content_show` to get the page and its digest, then `content_save` with that digest. The draft shows in the Console at once. Publish it yourself, or ask the agent to call `content_publish`.
 
 ::warning
-`content_publish` commits to `main` and deploys the site. Clients such as Claude Code ask before they run a tool with `destructiveHint`, but ViteHub cannot force them to ask.
+`content_publish` publishes the drafts. A blog post or a release is live within a minute. Clients such as Claude Code ask before they run a tool with `destructiveHint`, but ViteHub cannot force them to ask.
 ::
 
 ::agent-only

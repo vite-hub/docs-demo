@@ -5,7 +5,7 @@ navigation.order: 3
 icon: i-lucide-message-square-plus
 ---
 
-Signed-in users with a CMS role can comment on every page of this site. The comments are in D1, next to the users.
+Signed-in users with a CMS role can comment on every page of this site. The comments are in the `content` Database, a D1 database next to the CMS history. Users and sessions are in the `users` Database.
 
 ::steps{level="3"}
 ### Turn on comments
