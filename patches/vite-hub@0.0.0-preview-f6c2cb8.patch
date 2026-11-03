@@ -1,0 +1,153 @@
+diff --git a/dist/doctor.js b/dist/doctor.js
+index 992c6e3e537c4d65e1b80d1b29365259d0872102..a3749154ff27d74c16f5f13878eb64ac68735707 100644
+--- a/dist/doctor.js
++++ b/dist/doctor.js
+@@ -2450,10 +2450,7 @@ function checkViteHubOptions(ctx, options, host, where) {
+ 				why: `\`vitehub({ env })\` takes Env integration options only. ViteHub ignores \`env.${sections.join("`, `env.")}\` here, so these declarations do not exist at runtime.`,
+ 				fix: "Move `server`, `public`, and `define` to the top-level `env` key of the Vite config: `defineConfig({ env: { server: { ... } }, plugins: [vitehub()] })`."
+ 			};
+-		} else if (name === "connections" && host === "nuxt" && !(isNodeType(value, "Literal") && value.value === false)) report = {
+-			why: "The Nuxt module supports `connections` only in `nuxt dev`. `nuxt build` fails with `VITE_HUB_B0012`.",
+-			fix: "Remove `connections` from the Nuxt config, or use the `vitehub()` Vite plugin for Connections."
+-		};
++		}
+ 		if (report) ctx.report(diagnostics.VHUB0031({
+ 			why: `In ${where}: ${report.why}`,
+ 			fix: report.fix
+diff --git a/dist/index-BUQAHMWC.d.ts b/dist/index-CMcfdcsS.d.ts
+similarity index 98%
+rename from dist/index-BUQAHMWC.d.ts
+rename to dist/index-CMcfdcsS.d.ts
+index 737c1854467c5dbb9f649ac4d4bffa4f77fded09..13a8a15c7d8f89dd2e0f9a301f6a744f87004181 100644
+--- a/dist/index-BUQAHMWC.d.ts
++++ b/dist/index-CMcfdcsS.d.ts
+@@ -2555,7 +2555,7 @@ interface FileUpload {
+   mimeType?: string;
+ }
+ //#endregion
+-//#region ../agent/dist/types-CIsr17mY.d.ts
++//#region ../agent/dist/types-HYLVX13N.d.ts
+ //#region src/messages.d.ts
+ type MessageRole = "assistant" | "system" | "tool" | "user";
+ declare global {
+@@ -3287,8 +3287,10 @@ interface ConnectionsVitePluginOptions {
+    * Without this module, development uses `"development"`.
+    */
+   actor?: string;
+-  /** Module that exports the ViteHub Database as `db`. Set `false` when the app has no database. */
++  /** Module that exports the ViteHub Databases as `db` and `databases`. Set `false` when the app has no database. */
+   database?: string | false;
++  /** The Database that stores grants, approvals, and activity. Defaults to `default`. */
++  databaseName?: string;
+   /** Package that the generated handler imports from. */
+   importBase?: string;
+   /**
+@@ -3345,6 +3347,11 @@ interface ViteHubCloudflareOptions {
+    */
+   secretsFile?: string;
+ }
++/** `connections` options of `vitehub()`. */
++type ViteHubConnectionsOptions = Omit<ConnectionsVitePluginOptions, "database" | "databaseName" | "importBase"> & {
++  /** The Database that stores grants, approvals, and activity, such as `"users"`. Defaults to `default`. */
++  database?: string;
++};
+ interface ViteHubOptions {
+   /** Module specifier used by the application's `defineContent` import. */
+   contentImportBase?: string;
+@@ -3380,8 +3387,11 @@ interface ViteHubOptions {
+   channels?: boolean | ChannelsVitePluginOptions;
+   /** Options for the `cloudflare` preset. Other presets ignore them. */
+   cloudflare?: ViteHubCloudflareOptions;
+-  /** App-owned OAuth and API key Connections in `server/connections/`. They store grants in the default Database and enable `database` when it is unset. */
+-  connections?: boolean | ConnectionsVitePluginOptions;
++  /**
++   * App-owned OAuth and API key Connections in `server/connections/`. They store grants in the `default` Database, or
++   * in the Database that `database` names, and enable `database` when it is unset.
++   */
++  connections?: boolean | ViteHubConnectionsOptions;
+   /** The ViteHub Console at `/_vitehub`. Off by default. `true` reuses app Auth and its server access policy. Explicit options: `{ auth: false }`, `{ auth: "app" }`, or a Console Auth config. */
+   console?: boolean | ConsoleOptions;
+   /** Drizzle Databases in `server/databases/`. Without a Database Definition, an enabled database is one empty default Database. */
+@@ -3415,4 +3425,4 @@ declare module "vite" {
+   }
+ }
+ //#endregion
+-export { ViteHubOptions as a, LogsEvlogOptions as c, ObservabilityOptions as d, ConsoleOptions as f, ViteHubConfig as i, LogsOptions as l, CacheOptions as m, ViteHubAgentOptions as n, vitehub as o, DatabaseNuxtIntegrationOptions as p, ViteHubCloudflareOptions as r, AgentInvocationsDefault as s, DeploymentPreset as t, ObservabilityEvlogOptions as u };
+\ No newline at end of file
++export { ViteHubConnectionsOptions as a, AgentInvocationsDefault as c, ObservabilityEvlogOptions as d, ObservabilityOptions as f, CacheOptions as h, ViteHubConfig as i, LogsEvlogOptions as l, DatabaseNuxtIntegrationOptions as m, ViteHubAgentOptions as n, ViteHubOptions as o, ConsoleOptions as p, ViteHubCloudflareOptions as r, vitehub as s, DeploymentPreset as t, LogsOptions as u };
+\ No newline at end of file
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index ea744b0b4102399bcebcecc0ae500f09088dc93e..ff0f3b0ab89f7ccf059e29a39f0aa0893822af7b 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -1,3 +1,3 @@
+ import "@vite-hub/env/vite";
+-import { a as ViteHubOptions, c as LogsEvlogOptions, d as ObservabilityOptions, f as ConsoleOptions, i as ViteHubConfig, l as LogsOptions, m as CacheOptions, n as ViteHubAgentOptions, o as vitehub, r as ViteHubCloudflareOptions, s as AgentInvocationsDefault, t as DeploymentPreset, u as ObservabilityEvlogOptions } from "./index-BUQAHMWC.js";
+-export { type AgentInvocationsDefault, type CacheOptions, type ConsoleOptions, DeploymentPreset, type LogsEvlogOptions, type LogsOptions, type ObservabilityEvlogOptions, type ObservabilityOptions, ViteHubAgentOptions, ViteHubCloudflareOptions, ViteHubConfig, ViteHubOptions, vitehub };
+\ No newline at end of file
++import { a as ViteHubConnectionsOptions, c as AgentInvocationsDefault, d as ObservabilityEvlogOptions, f as ObservabilityOptions, h as CacheOptions, i as ViteHubConfig, l as LogsEvlogOptions, n as ViteHubAgentOptions, o as ViteHubOptions, p as ConsoleOptions, r as ViteHubCloudflareOptions, s as vitehub, t as DeploymentPreset, u as LogsOptions } from "./index-CMcfdcsS.js";
++export { type AgentInvocationsDefault, type CacheOptions, type ConsoleOptions, DeploymentPreset, type LogsEvlogOptions, type LogsOptions, type ObservabilityEvlogOptions, type ObservabilityOptions, ViteHubAgentOptions, ViteHubCloudflareOptions, ViteHubConfig, ViteHubConnectionsOptions, ViteHubOptions, vitehub };
+\ No newline at end of file
+diff --git a/dist/index.js b/dist/index.js
+index 761f76db328475fcd7b89d81d4d332056d65e8dc..f9e9f25a0785d993bbc9c963c63b7db44b2837d6 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -1,2 +1,2 @@
+-import { t as vitehub } from "./src-D7yKy1wz.js";
++import { t as vitehub } from "./src-B8JkFamA.js";
+ export { vitehub };
+diff --git a/dist/nuxt.d.ts b/dist/nuxt.d.ts
+index 9baa8d1820f49509758433769511f661748c70a7..3bc7d657f3307e0fc44f77dfddd1d412e05a6afe 100644
+--- a/dist/nuxt.d.ts
++++ b/dist/nuxt.d.ts
+@@ -1,4 +1,4 @@
+-import { o as vitehub, p as DatabaseNuxtIntegrationOptions } from "./index-BUQAHMWC.js";
++import { m as DatabaseNuxtIntegrationOptions, s as vitehub } from "./index-CMcfdcsS.js";
+ import { EnvIntegrationOptions, EnvViteConfigOptions } from "@vite-hub/env";
+ //#region src/nuxt.d.ts
+ type ViteHubNuxtOptions = Omit<Parameters<typeof vitehub>[0], "database" | "env"> & {
+diff --git a/dist/nuxt.js b/dist/nuxt.js
+index a6fc0c9c0b8308fe0322b7f48ca8fb30d6616878..2daa02cba1d3cca1ff432cbc22e4bea403234e10 100644
+--- a/dist/nuxt.js
++++ b/dist/nuxt.js
+@@ -1,7 +1,7 @@
+ import { t as viteHubErrorDiagnostics } from "./error-diagnostics-DlD-oe8e.js";
+ import { a as VITEHUB_PROJECT_ROOT, d as resolveViteHubProjectRoot, i as VITEHUB_NITRO_CONFIG_CONTEXT, n as VITEHUB_APP_BASE_URL, o as VITEHUB_SERVER_DIRS, r as VITEHUB_GENERATED_ROOT, u as resolveNuxtServerDirs } from "./types-B2WchHXx.js";
+ import { a as requireOptionalOwner, n as importOptionalOwner, o as isPlainObject } from "./optional-owners-BTnHee2k.js";
+-import { $ as removeViteHubDevServerFile, A as createNitroServerKit, B as hasUpstashStore, C as writeConsoleNitroPlugin, D as consoleDocumentEditorSectionIds, E as consoleContributedSections, F as writeConsoleAuthHandlers, G as nitroCacheBypass, H as markCmsPresetFeaturesResolved, I as writeConsoleConnectionsActor, J as consoleDatabaseUrl, K as describeDeploymentPlanOutput, L as writeFileIfChanged, M as consoleConnectionsActorId, N as registeredConsoleAuthMode, O as discoverConsoleEntrySections, P as resolveConsoleAuthConfig, Q as ownerModules, R as disabledKVConfigModule, S as assertConsoleRetention, T as discoverConsoleBuildCatalog, U as resolveCmsPresetFeatures, V as upstashDriverSpecifier, W as isIncludedNitroPlugin, X as withConnectionsDatabase, Y as resolveConsoleJournal, Z as withDataDir, _ as addConsolePageHandlers, a as configureConsoleFixtureLifecycle, b as createConsoleCliNamespace, c as consoleOpenAccessBuildWarning, d as resolveConsoleAccessBuild, et as writeViteHubDevServerFile, f as resolveConsoleOptions, g as consoleNuxtDevToolsTab, h as consoleOperationFeatures, i as closeConsoleInvocationRootState, j as consoleAuthMiddlewareFile, k as isConsoleContributedSectionId, l as createConsoleInvocationRootState, m as updateConsoleInvocationRootState, n as assertConsoleAccess, o as consoleAuthConfig, p as resolveGeneratedConsolePlugin, q as consoleD1Binding, r as assertConsoleProductionAccess, s as consoleInvocationRootPlugin, t as vitehub, u as generatedConsolePluginRegistration, v as addConsoleRpcHandler, w as resolveConsoleProjectNameFromRoot, x as serializeConsoleRefresh, y as mountPath, z as disabledUpstashDriver } from "./src-D7yKy1wz.js";
++import { $ as removeViteHubDevServerFile, A as createNitroServerKit, B as hasUpstashStore, C as writeConsoleNitroPlugin, D as consoleDocumentEditorSectionIds, E as consoleContributedSections, F as writeConsoleAuthHandlers, G as nitroCacheBypass, H as markCmsPresetFeaturesResolved, I as writeConsoleConnectionsActor, J as consoleDatabaseUrl, K as describeDeploymentPlanOutput, L as writeFileIfChanged, M as consoleConnectionsActorId, N as registeredConsoleAuthMode, O as discoverConsoleEntrySections, P as resolveConsoleAuthConfig, Q as ownerModules, R as disabledKVConfigModule, S as assertConsoleRetention, T as discoverConsoleBuildCatalog, U as resolveCmsPresetFeatures, V as upstashDriverSpecifier, W as isIncludedNitroPlugin, X as withConnectionsDatabase, Y as resolveConsoleJournal, Z as withDataDir, _ as addConsolePageHandlers, a as configureConsoleFixtureLifecycle, b as createConsoleCliNamespace, c as consoleOpenAccessBuildWarning, d as resolveConsoleAccessBuild, et as writeViteHubDevServerFile, f as resolveConsoleOptions, g as consoleNuxtDevToolsTab, h as consoleOperationFeatures, i as closeConsoleInvocationRootState, j as consoleAuthMiddlewareFile, k as isConsoleContributedSectionId, l as createConsoleInvocationRootState, m as updateConsoleInvocationRootState, n as assertConsoleAccess, o as consoleAuthConfig, p as resolveGeneratedConsolePlugin, q as consoleD1Binding, r as assertConsoleProductionAccess, s as consoleInvocationRootPlugin, t as vitehub, u as generatedConsolePluginRegistration, v as addConsoleRpcHandler, w as resolveConsoleProjectNameFromRoot, x as serializeConsoleRefresh, y as mountPath, z as disabledUpstashDriver } from "./src-B8JkFamA.js";
+ import { r as createConsoleInvocationsIdentity } from "./internal-Ca7DYHpa.js";
+ import { T as resolveConsoleSectionIds, v as isConsoleConnectionsEnabled } from "./sections-DV0_mu_9.js";
+ import { o as installConsoleProjectName, s as installConsoleSections } from "./sections-DozBKsS9.js";
+@@ -756,7 +756,6 @@ const viteHubNuxtModule = async function viteHubNuxtModule(inlineOptions, nuxtIn
+ 		serverDirs: resolveNuxtServerDirs(nuxt.options)
+ 	}))));
+ 	const consoleOptions = resolveConsoleOptions(options.console);
+-	if (options.connections && nuxt.options.dev === false) throw viteHubErrorDiagnostics.VITE_HUB_B0012({ message: "[vitehub] connections is not supported by the Nuxt module yet. Use the Vite plugin." });
+ 	const plan = resolveDeploymentPlan(moduleOptions.preset);
+ 	const configuredOptions = options.database && nuxt.options.database && typeof nuxt.options.database === "object" ? {
+ 		...options,
+diff --git a/dist/src-D7yKy1wz.js b/dist/src-B8JkFamA.js
+similarity index 99%
+rename from dist/src-D7yKy1wz.js
+rename to dist/src-B8JkFamA.js
+index 578628b410f67758e0019727c82fbc05aeb00b76..6472bdf82127104fffa40c712d6b92d335b8c824 100644
+--- a/dist/src-D7yKy1wz.js
++++ b/dist/src-B8JkFamA.js
+@@ -8372,12 +8372,11 @@ function createViteHubPlugins(options) {
+ 	if (options.channels) plugins.push(hubChannels(options.channels === true ? void 0 : options.channels));
+ 	if (options.connections) {
+ 		if (options.connections !== true && options.connections.management && !configuredConsole) throw viteHubErrorDiagnostics.VITE_HUB_R0126({ message: "[vitehub] connections.management requires the Console. Set console: { auth: \"app\" }, console: { auth: { ... } }, or console: { auth: false }." });
+-		const connectionsOptions = options.connections === true ? {
+-			database: "vite-hub/database/drizzle",
+-			importBase: "vite-hub/connections"
+-		} : {
+-			...options.connections,
++		const { database: databaseName, ...connections } = options.connections === true ? {} : options.connections;
++		const connectionsOptions = {
++			...connections,
+ 			database: "vite-hub/database/drizzle",
++			...databaseName ? { databaseName } : {},
+ 			importBase: "vite-hub/connections"
+ 		};
+ 		if (!connectionsOptions.actor && configuredConsole && consoleSections.includes("connections")) connectionsOptions.actor = consoleConnectionsActorId;

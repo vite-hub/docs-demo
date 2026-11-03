@@ -9,6 +9,9 @@ export default defineNuxtConfig({
       name: "vitehub-docs-demo",
       publicUrl,
       auth: true,
+      // The docs assistant: an Agent on the ChatGPT plan, and the Connection that holds the grant.
+      agent: true,
+      connections: { management: true, database: "users" },
       // Two R2 buckets. `default` holds the CMS history, which only the Worker reads. `media` is the media library of
       // the Console, served at /media for the illustrations and covers on the pages.
       blob: {
@@ -56,6 +59,7 @@ export default defineNuxtConfig({
     github: { repo: "vite-hub/docs-demo" },
     socials: [{ label: "ViteHub", to: "https://vitehub.dev", icon: "i-lucide-globe" }],
     mcp: { name: "lumen", guide: "/docs/this-site/connect-your-agent" },
+    assistant: true,
   },
   // Static assets answer before the Worker on Cloudflare. The Console preview of a draft and the Markdown answer to
   // `Accept: text/markdown` need the Worker, so it runs first for the pages and the page JSON. vitehub.dev gets the same
