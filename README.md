@@ -19,8 +19,8 @@ The docs assistant is off: it runs Codex, which needs Node.js, and this site run
 | --- | --- |
 | `nuxt.config.ts` | `vite-hub/nuxt` with the `cloudflare` preset, and `@vite-hub/docs/nuxt` |
 | `content/` | The pages |
-| `server/auth.ts` | Better Auth: email and password, GitHub, the admin plugin with the CMS roles, and `consoleMcpOAuth()` |
-| `server/databases/` | The D1 Database: the Better Auth tables, and the migrations of every table |
+| `server/auth.ts` | Better Auth on D1 through `authDatabase()`: email and password, GitHub when its secrets exist, the admin plugin with the CMS roles, and `consoleMcpOAuth()` |
+| `server/databases/` | The D1 Database Definition and the migrations of every table that Auth, the CMS, and Comments add |
 | `server/content.ts` | The CMS: `docsCollection()` with `access: 'roles'`. Today on the Blob + Database store (R2 and D1). With a GitHub token it moves to the GitHub store of this repository with `publish: 'commit'`, see the comment in the file |
 | `server/comments.ts`, `server/console-authorize.ts` | Comments and Console access with the CMS roles |
 | `.github/workflows/deploy.yml` | Builds, applies the D1 migrations, and deploys on each push to `main` |
@@ -34,26 +34,21 @@ corepack pnpm exec wrangler d1 migrations apply vitehub-docs-demo --remote --con
 corepack pnpm exec wrangler deploy --config .output/server/wrangler.json
 ```
 
-Worker secrets: `VITEHUB_SECRET` (32 or more characters) and `VITEHUB_CONTENT_KEY` (32 random bytes, for the Console preview). Not set yet: `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` (GitHub sign-in), and `VITEHUB_GITHUB_TOKEN` (a fine-grained token for this repository, with contents and pull requests read and write, for the GitHub store).
+Worker secrets: `VITEHUB_SECRET` (32 or more characters), `VITEHUB_CONTENT_KEY` (32 random bytes, for the Console preview), and `VITEHUB_ADMIN_EMAILS` (the emails that get the admin role on their first sign-up or GitHub sign-in). Not set yet: `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` (GitHub sign-in), and `VITEHUB_GITHUB_TOKEN` (a fine-grained token for this repository, with contents and pull requests read and write, for the GitHub store).
 
 Resources: the Worker `vitehub-docs-demo`, the D1 database `vitehub-docs-demo`, and the R2 bucket `vitehub-docs-demo`. Repository secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
 
-## Patches
+## Packages
 
-The preview packages come from vite-hub/vitehub#3237 at commit `0fe8108`. `patches/` holds the built `dist` of open pull requests that this demo needs. Drop each patch when its pull requests land, and update the preview commit.
-
-| Patch | Pull requests |
-| --- | --- |
-| `vite-hub` | #3264 (Open in new tab on tool windows), #3265 (pill on prerendered pages and after sign-in), #3266 (Console URL state), #3267 (Console search and filters), #3277 (prerender skips the Console pages), #3280 (Console MCP OAuth discovery on Nitro 2) |
-| `@vite-hub/auth` | #3265 (session marker for the pill) |
-| `@vite-hub/comments` | #3265, #3267 |
-| `@vite-hub/docs` | #3271 (MCP tools as JavaScript), #3276 (auto-imports in an installed package) |
+The ViteHub packages are the pkg.pr.new previews of vite-hub/vitehub `main` at commit `88e965a`, which has every fix that this demo found (#3271, #3276, #3277, #3280, #3284) and the Auth tables of #3278. There are no patches. `pnpm-lock.yaml` has an `integrity` for each pkg.pr.new tarball: pnpm 10.34 refuses a tarball without one on the next install.
 
 Workarounds in the app, with the finding behind each:
 
 - `console.mcp.resource` in `nuxt.config.ts`: `publicUrl` does not reach the Nitro 2 server bundle of Nuxt 4, so without it the Console MCP answers `CONSOLE_MCP_ORIGIN_REQUIRED`.
+- `nitro.cloudflare.wrangler.assets.run_worker_first` for the docs pages and `/api/_docs/*`: without it the static prerendered pages answer first, so the Console preview pane stays blank and `Accept: text/markdown` gets HTML.
 - `agents`, `@vite-hub/schedule`, and `@vite-hub/shell` in `dependencies`: the Worker bundle imports them on paths that this app does not use (the docs MCP server on Workers, the Console Schedule route, the Workspace shell), and `wrangler deploy` fails when they are missing.
 - `NODE_OPTIONS=--max-old-space-size=6144` in the build script: the Nitro bundle runs out of the default heap.
-- `nitro.cloudflare.wrangler.assets.run_worker_first` for the docs pages and `/api/_docs/*`: without it the static prerendered pages answer first, so the Console preview pane stays blank and `Accept: text/markdown` gets HTML.
 
-`pnpm-lock.yaml` has an `integrity` for each pkg.pr.new tarball. pnpm 10.34 refuses a tarball without one on the second install.
+## Review
+
+Comment on the live pages through Drop: <https://drop.vitehub.dev/d/ej2mgej5rcs4/vitehub-docs-demo>. The site loads Drop's review script, so the Comment button shows on every page.
