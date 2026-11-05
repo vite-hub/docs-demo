@@ -80,5 +80,7 @@ export default defineNuxtConfig({
     "/api/blog/**": { swr: 60 },
     "/api/changelog/**": { swr: 60 },
   },
+  // These feeds read the CMS at request time and are unavailable to the prerender link checker.
+  linkChecker: { excludeLinks: ["/blog/rss.xml", "/changelog/rss.xml"] },
   compatibilityDate: "2026-11-01",
 })

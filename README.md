@@ -54,19 +54,24 @@ Worker secrets: `VITEHUB_SECRET` (32 or more characters), `VITEHUB_CONTENT_KEY` 
 
 Resources: the Worker `vitehub-docs-demo`, the D1 databases `vitehub-docs-demo-users` (binding `DB_USERS`) and `vitehub-docs-demo-content` (binding `DB_CONTENT`), and the R2 buckets `vitehub-docs-demo` (binding `BLOB`, the CMS documents, not served) and `vitehub-docs-demo-media` (binding `BLOB_MEDIA`, the media library, served at `/media`). The D1 database `vitehub-docs-demo` is the old single database. The site no longer uses it; its rows were copied to the two new databases on 2026-11-03, and it stays for a rollback until someone deletes it. Repository secrets: `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
 
+## Enable Console publishing to the live docs
+
+The docs pages are built from `content/`. The current Blob + Database store saves Console edits, but publishing there does not update those repository files. Blog, changelog, and author documents use the CMS at request time.
+
+To enable the GitHub flow later:
+
+1. Create a GitHub OAuth App for Lumen. Set its homepage to `https://vitehub-docs-demo.maximogarciamtnez.workers.dev` and its authorization callback to `https://vitehub-docs-demo.maximogarciamtnez.workers.dev/api/auth/callback/github`. Store its client ID and client secret as Worker secrets `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`. This enables GitHub sign-in. An editor still needs a CMS role through the existing admin access controls.
+2. Create a fine-grained GitHub token limited to `vite-hub/docs-demo`, with Contents read and write and Pull requests read and write. Store it on the Worker as `VITEHUB_GITHUB_TOKEN`. The CMS uses this token to write repository content. The OAuth App credentials do not grant that access.
+3. In `server/content.ts`, select the GitHub store with `extends: [cms, { repo: "vite-hub/docs-demo", branch: "main", draftBranch: "vitehub/content", publish: "commit", access: "roles", database: "content" }]`. Keep the collection definitions. Before the switch, copy any published content or drafts that exist only in R2 and D1 into the repository, or keep a backup. The store switch does not import them.
+4. Land that configuration and let the existing deploy workflow rebuild the Worker. Keep the repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` available. Repository rules must allow the CMS token to commit to `main`, and the token must be able to trigger the push workflow.
+
+After this setup, Save commits to `vitehub/content`. Publish commits to `main`, and `.github/workflows/deploy.yml` builds and deploys the updated docs. GitHub sign-in and GitHub publishing use separate credentials. Email sign-in still works without the OAuth App.
+
 ## Packages
 
-The ViteHub packages are the pkg.pr.new previews of vite-hub/vitehub `main` at commit `f6c2cb8`, which has every fix that this demo found before (#3271, #3276, #3277, #3280, #3284, #3292, #3294) and the Auth tables of #3278. `pnpm-lock.yaml` has an `integrity` for each pkg.pr.new tarball: pnpm 10.34 refuses a tarball without one on the next install, and `pnpm patch-commit` drops them, so put them back after a patch change.
+The ViteHub packages use the pkg.pr.new build of vite-hub/vitehub `main` at commit `36269362b271e6741b7619099f865011d7233a2d`. Direct dependencies and overrides use the same commit, including `vite-hub`. Version 0.2.0 is not on npm yet. The six assistant fixes are in this build, so the demo needs no package patches or AI SDK dependency extension.
 
-Patches for the docs assistant, until these PRs land. Remove each patch when the packages move to a `main` commit with its PR:
-
-- `patches/@vite-hub__agent@…patch`: model-backed Drivers on the ChatGPT plan, `driver: { model, gateway: chatgpt() }` ([#3313](https://github.com/vite-hub/vitehub/pull/3313)).
-- `patches/@vite-hub__docs@…patch`: `docsAssistant` resolves to that Driver under the `workerd` condition, and `docs.assistant` no longer rejects the Cloudflare preset ([#3317](https://github.com/vite-hub/vitehub/pull/3317)).
-- `patches/vite-hub@…patch` and `patches/@vite-hub__connections@…patch`: Connections in a Nuxt production build on Workers ([#3314](https://github.com/vite-hub/vitehub/pull/3314)), and `connections: { database: "users" }` ([#3315](https://github.com/vite-hub/vitehub/pull/3315)).
-- `patches/@vite-hub__workflow@…patch`: the Nuxt prerender step no longer loads `cloudflare:workflows` ([#3316](https://github.com/vite-hub/vitehub/pull/3316)).
-- `patches/@vite-hub__workspace@…patch`: the Nitro bundle of Nuxt 4 gets the bundled pages of the assistant's Workspace, which a Worker cannot read from disk ([#3324](https://github.com/vite-hub/vitehub/pull/3324)).
-
-`pnpm.packageExtensions` gives `@vite-hub/agent` the `@ai-sdk/openai` and `@ai-sdk/provider` dependencies that #3313 adds; remove it with the agent patch.
+`pnpm-lock.yaml` records an `integrity` for each pkg.pr.new tarball. Keep these hashes so `pnpm install --frozen-lockfile` can verify the previews.
 
 Workarounds in the app, with the finding behind each:
 
