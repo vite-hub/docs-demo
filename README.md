@@ -69,7 +69,7 @@ After this setup, Save commits to `vitehub/content`. Publish commits to `main`, 
 
 ## Packages
 
-The ViteHub packages use the pkg.pr.new build of vite-hub/vitehub `main` at commit `9bf8c067f2502107e09381468e3e5d94c41fe89d`. Direct dependencies and overrides use the same commit, including `vite-hub`. Version 0.2.0 is not on npm yet. The six assistant fixes are in this build, so the demo needs no package patches or AI SDK dependency extension.
+The ViteHub packages use the pkg.pr.new build of vite-hub/vitehub `main` at commit `36269362b271e6741b7619099f865011d7233a2d`. Direct dependencies and overrides use the same commit, including `vite-hub`. Version 0.2.0 is not on npm yet. The six assistant fixes are in this build, so the demo needs no package patches or AI SDK dependency extension.
 
 `pnpm-lock.yaml` records an `integrity` for each pkg.pr.new tarball. Keep these hashes so `pnpm install --frozen-lockfile` can verify the previews.
 
