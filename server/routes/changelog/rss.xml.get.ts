@@ -1,3 +1,4 @@
+import { defineEventHandler } from "nuxt/server"
 import { listReleases } from "../../utils/collections"
 import { rss } from "../../utils/feed"
 

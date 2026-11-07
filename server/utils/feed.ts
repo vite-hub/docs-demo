@@ -1,3 +1,4 @@
+import { setResponseHeader } from "nitro/h3"
 import { publicUrl } from "../../site"
 
 import type { H3Event } from "h3"

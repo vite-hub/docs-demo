@@ -1,6 +1,6 @@
 import { fileURLToPath } from "node:url"
 
-import { mediaRoute, publicUrl } from "./site"
+import { mediaRoute, publicUrl } from "./site.ts"
 
 export default defineNuxtConfig({
   modules: [
@@ -30,12 +30,10 @@ export default defineNuxtConfig({
           },
         },
       },
-      // `publicUrl` does not reach the Nitro 2 server bundle of Nuxt 4, so the Console MCP needs its resource here.
       // `authorize` is an absolute path: with an `app/` folder, ViteHub resolves a relative one from `app/`.
       console: {
         auth: "app",
         authorize: fileURLToPath(new URL("./server/console-authorize.ts", import.meta.url)),
-        mcp: { resource: `${publicUrl}/_vitehub/mcp` },
       },
     }],
     "@vite-hub/docs/nuxt",
@@ -70,6 +68,9 @@ export default defineNuxtConfig({
     // build cannot reach.
     prerender: { ignore: ["/blog", "/changelog", mediaRoute] },
   },
+  // The Worker renders the blog, the changelog, their feeds, the media library, and the Console at request time, so the
+  // build output has no file for them. Nuxt Link Checker and the docs link check both read this list.
+  linkChecker: { excludeLinks: [/^\/(?:blog|changelog|_vitehub)(?:\/|$)/, new RegExp(`^${mediaRoute}/`)] },
   // The blog and the changelog read the CMS when a page is requested, so the build does not prerender them. Each Worker
   // keeps a copy for a minute; Console previews skip it.
   routeRules: {
